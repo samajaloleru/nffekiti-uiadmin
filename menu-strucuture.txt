@@ -1,0 +1,92 @@
+--- NEW ---
+
+Profiles
+    Staff
+    Customer
+    Suppliers
+    Documents
+    Settings
+
+Orders
+    Sales
+    Pricelist
+    Purchases
+    Receiving
+
+Inventory
+    Items
+    Stocks
+    Transfers
+
+Production
+    Bill of Materials
+    Work Orders
+    Processing
+
+Financial Accounting
+    Invoices
+    Chart of Accounts
+    Bank Reconciliation
+
+Support
+    Users
+    Roles
+    Permissions
+    
+--- OLD ---
+
+POS
+    Register
+    Inventory
+    Receipts
+    Sales
+
+Profiles
+    Staffs
+    Partners
+    Customers
+    Documents
+    Settings
+
+Marketing
+    SEO
+    Blogs
+    Campaigns
+    Newsletters
+    Media Gallery
+
+Accounting
+    Ledgers
+    Accounts
+    Journals
+    Reports
+
+Supply Chain
+    Items
+    Pricelists
+    Quotations
+    Orders
+    Invoices
+    Categorys
+
+Analytics
+    Hits
+    Blacklists
+    Activations
+
+Communications
+    SMS
+    SSH
+    SMTP
+    Domains
+    Documentations
+
+Security
+    Users
+    Roles
+    Permissions
+    SSH Server
+    Caddy Server
+    Database Admin
+
+

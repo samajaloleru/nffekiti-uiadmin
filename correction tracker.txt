@@ -1,0 +1,100 @@
+stock-new-lines  name duplicate stock edit lines
+Under
+
+Stock Sub module Create form exactly with this:
+
+ 
+
+Stock
+
+Name Of Item, Price, Qty, Total Value
+
+ 
+------------------------------------------------------------------------------------------------------------------------------------------------------
+DONE!!!
+========================
+
+Material Inventory:
+
+ 
+
+Name Of Fabric, colour, Meters, cost per meters, -Total Value. ( The system should be able to give a total value with 15% VAT Calculated automatic.
+
+ 
+
+The above is how she want the form to look like.
+
+and from the dashboard the system should show her. The ICONs, She said he prepare to lick on the icon and go to the list of the inventory and not from the side drop down.
+
+ 
+
+The form that is currently there don�t not speak to her line of inventory as she said.
+
+============================================================================================================================================================
+
+Profile: - Suppliers
+
+ 
+
+Zando, We should put The Space Logo. We should remove (Documents) and leave work Orders and Invoice. So when work order is created it should be able to generate an invoice in a specific form she want. Invoice format will be send to your email.  And once the invoice is generated it should be able to be send to any email address she want to send the invoice to.  Discount to be configured on the system under Zando will be send via email.
+
+The Space: Should have Consignment and Invoice Rent. and not Documents, Work Orders.
+
+ 
+
+Superbolis should be configure the same was as Zando.
+
+ 
+
+Please can we have this done today and i can have it tested.
+
+ 
+
+And the documents she send, They need to be imported to the system, All list she send we need to import everything completely.
+
+ 
+
+This was part of what we should have done but it was omitted.
+
+ STOCK INVENTORY
+    Name of item
+    Color
+    Quantity
+    Size (with dropdown)
+    Unit Price Excl vat
+    Total Price Invoice
+    
+
+
+
+
+
+
+
+MATERIAL INVENTORY
+    Name of Fabric
+    Color
+    Price tag
+    Meter
+    Unit Price Excl vat
+    Retail Price
+    Total Incl Vat
+    Total Vat
+
+
+
+
+
+
+
+
+
+
+
+OTHER INVENTORY
+    Name of item
+    Color
+    Quantity
+    Size (with dropdown)
+    Unit Price Excl vat
+    
