@@ -1,8 +1,8 @@
 <template>
     
   <router-link class="link dim" :to="to">
-      <li class="bt b--black-10 bg-washed-yellow">
-        <p class="ph2 h3 inline-flex items-center mv0 black ">
+      <li class="bt b--black-10 bg-washed-red">
+        <p class="ph2 h3 inline-flex items-center mv0 mid-gray ">
           <span class="oi mr1" :data-glyph="icon"></span>
           {{title}}
         </p>

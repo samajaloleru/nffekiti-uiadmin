@@ -8,7 +8,7 @@
     "webpack": "cross-env NODE_ENV=development webpack-dev-server --config=build/webpack.dev.config.js ",
     "build": "cross-env NODE_ENV=production webpack -p --config=build/webpack.prod.config.js --progress --hide-modules"
   },
-  "author": "Plusfab",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "@babel/core": "^7.1.0",

@@ -140,7 +140,7 @@
                     <div class="db pb1">Ms Jackey PLK</div>
                 </div>
                 <div class="w-50 fl tl pa1">
-                    <div class="db pb1">FROM: PLUS-FAB</div>
+                    <div class="db pb1">FROM: NFF Ekiti</div>
                     <div class="db pb1">596 Thabo Sehume Street</div>
                     <div class="db pb1">0001</div>
                     

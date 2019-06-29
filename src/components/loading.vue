@@ -33,7 +33,7 @@
       const that = this  
       setTimeout(function () {
         that.loading = !that.loading
-      }, 1250);
+      }, 250);
     }
   }
 </script>

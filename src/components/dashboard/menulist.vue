@@ -1,10 +1,10 @@
 <template>
   <div class="w-50 w-30-m w-20-l fl-l">
-    <nav class="vh-100 overflow-y-scroll w-20-l fixed bg-near-white">
+    <nav class="vh-100 overflow-y-scroll w-20-l fixed bg-washed-green">
       <ul class="list pt0 ph0 mt0">
         <slot ></slot>
 
-        <li class="ph2 bg-black dim" >
+        <li class="ph2 bg-green dim" >
         <router-link to="/admin" class="no-underline ">
           <p class="h3 f7 inline-flex items-center mv0 white ">
             <span class="oi mr2" data-glyph="dashboard"></span>
@@ -20,7 +20,7 @@
         <menulistgroup title="Financial Accounting" :submenu="submenu.accounting"/>
         <menulistgroup title="System Security" :submenu="submenu.security"/>
 
-          <li class="ph2 bg-black-80 dim" >
+          <li class="ph2 bg-red dim" >
             <router-link  class="no-underline" to="/">
               <p class="h3 f7 inline-flex items-center mv0 white ">
                 <span class="oi mr2" data-glyph="account-logout"></span>
