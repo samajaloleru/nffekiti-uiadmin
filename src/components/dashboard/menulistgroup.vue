@@ -1,6 +1,6 @@
 <template>
     
-    <li class="bb b--white pointer" @click="toggleMenu" >
+    <li class="bb b--white pointer bg-white" @click="toggleMenu" >
         <p class="ph2 mr3 h3 inline-flex items-center mv0 mid-gray dim ">
             <span class="oi mr1" :data-glyph="icon" ></span>
             {{title}}

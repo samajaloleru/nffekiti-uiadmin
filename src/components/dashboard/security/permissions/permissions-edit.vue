@@ -1,20 +1,20 @@
 <template>
     <section class="pa2 pa3-l">
-      <div class="w-100 pa2 bg-light-gray br4 cf inline-flex items-center relative">
+      <div class="w-100 pa2 bg-light-gray br2 cf inline-flex items-center relative">
         <div class="fl bg-light-gray pa2 pb fw5 tracked ttu f7 black ">
           Permission / Edit
         </div>
         <router-link :to="{name:'permissions-view',params:{id:record.ID}}" class="fl right-1 absolute ph2 pv1 br4 bg-red hover-bg-dark-red grow-ns pointer f6 white tc no-underline">
-          Go Back
+          Back
         </router-link>
       </div>
 
 
       <notify class="mv2" :notifications="notifications"></notify>
 
-      <div v-if="isFound" class="pa2 bg-light-gray br4 cf">
+      <div v-if="isFound" class="pa2 bg-washed-yellow br1 cf">
         
-        <div class="pa2 bg-light-gray br4 cf w-100">
+        <div class="pa2 bg-light-gray br2 cf w-100">
 
           <div class="mt3 pa2 dib">
             <label class="db fw4 lh-copy f7 black">Select Status </label>
@@ -106,8 +106,8 @@
           
 
           <div class="fl w-100 mt3">
-            <div class="fr ph3 pv2 br4 bg-green grow-ns pointer f6 white tc no-underline"  @click="save" >
-              Save
+            <div class="fr ph3 pv2 br1 bg-near-black near-white grow-ns pointer f6 tc no-underline"  @click="save" >
+              <i class="fas fa-check"></i> Save
             </div>
           </div>
         </div>

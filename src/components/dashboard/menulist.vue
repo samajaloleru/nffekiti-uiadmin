@@ -1,143 +1,113 @@
 <template>
-  <div class="w-50 w-30-m w-20-l fl-l">
-    <nav class="vh-100 overflow-y-scroll w-20-l fixed bg-washed-green">
-      <ul class="list pt0 ph0 mt0">
-        <slot ></slot>
+    <div class="w-80 w-40-m w-20-l fl-l">
+        <nav class="vh-100 overflow-y-auto w-100 w-20-l fixed">
+            <ul class="list pt0 ph0 mt0">
+                <slot></slot>
 
-        <li class="ph2 bg-green dim" >
-        <router-link to="/admin" class="no-underline ">
-          <p class="h3 f7 inline-flex items-center mv0 white ">
-            <span class="oi mr2" data-glyph="dashboard"></span>
-            Dashboard
-          </p>
-        </router-link>
-         </li>
+                <li class="bg-light-gray"> 
+                    <div class="pa2 bg-green fl w-100">
+                        <input class="fl f7 bn pa1 br1 bg-white mid-gray w-100 " type="text" placeholder="Search Menu" @keyup="searchMenu" v-model="searchtext">
+                    </div>
+                    <div class="fl relative w-100">
+                      <ul class="bg-washed-green absolute w-100 pa0 br2 br--bottom mt0 list " style="max-height:18em">
+                        <li class="" v-for="(menu, index) in menuList" :key="index" @click="$parent.toggleMenu">
+                            <span @click="menuList=[], searchtext=''">
+                                <router-link class="link mid-gray w-100 fl pa2 bt b--washed-green f7" :to="menu.to">
+                                    #{{index+1}} <span class="oi mh1" :data-glyph="menu.icon"></span> {{menu.title}}
+                                </router-link>
+                            </span>
+                        </li>
+                      </ul>
+                  </div>
+                </li>
+
+                <li class="ph2 bg-near-black pointer" >
+                    <router-link to="/admin" class="no-underline ">
+                        <p class="h3 f7 inline-flex items-center mv0 light-green ">
+                            <span class="oi mr2" data-glyph="dashboard"></span>
+                            Dashboard
+                        </p>
+                    </router-link>
+                </li>
+
+                <menulistgroup title="Records" :submenu="submenu.records"/>        
+                <menulistgroup title="Reports" :submenu="submenu.reports"/>
+                <menulistgroup title="Maintenance" :submenu="submenu.maintenance"/>
+                <menulistgroup title="System Security" :submenu="submenu.security"/>
+
+                <li class="ph2 bg-near-black dim" >
+                    <router-link  class="no-underline" to="/">
+                    <p class="h3 f7 inline-flex items-center mv0 light-green ">
+                        <span  class="mr2 fas sign-out-alt"></span> Logout
+                    </p>
+                    </router-link>
+                </li>
+            </ul>
+        </nav>
         
-        <menulistgroup title="Profiles" :submenu="submenu.profiles"/>        
-        <menulistgroup title="Inventory" :submenu="submenu.inventory"/>
-        <menulistgroup title="Production Manager" :submenu="submenu.production"/>
-        <menulistgroup title="Order Manager" :submenu="submenu.orders"/>
-        <menulistgroup title="Financial Accounting" :submenu="submenu.accounting"/>
-        <menulistgroup title="System Security" :submenu="submenu.security"/>
-
-          <li class="ph2 bg-red dim" >
-            <router-link  class="no-underline" to="/">
-              <p class="h3 f7 inline-flex items-center mv0 white ">
-                <span class="oi mr2" data-glyph="account-logout"></span>
-                Logout
-              </p>
-            </router-link>
-          </li>
-      </ul>
-    </nav>
-    
-    <div class="menulist"></div>
-  </div>
+        <div class="menulist"></div>
+    </div>
 </template>
 <script type="text/javascript">
-  import menulistgroupComponent from "@/components/dashboard/menulistgroup"
-  const submenu = {
-   
-    profiles: [
-        {to:"/admin/profiles/players",icon:"people",title:"Players"},
-        {to:"/admin/profiles/suppliers",icon:"people",title:"Suppliers"},
-        {to:"/admin/profiles/staffs",icon:"people",title:"Staffs"},
-        {to:"/admin/profiles/documents",icon:"box",title:"Documents"},
-        {to:"/admin/profiles/settings",icon:"cog",title:"Settings"},
-    ],
-
-    orders: [
-        {to:"/admin/orders/pricelists",icon:"list-rich",title:"Pricelists"},
-        {to:"/admin/orders/sales",icon:"list-rich",title:"Sales Order"},
-        {to:"/admin/orders/purchases",icon:"list-rich",title:"Purchase Orders"},
-        {to:"/admin/orders/receivings",icon:"list-rich",title:"Order Receivings"},
-    ],
-
-    inventory: [
-    //   {to:"/admin/inventory/items",icon:"list-rich",title:"Items"},
-      {to:"/admin/inventory/stocks",icon:"list-rich",title:"Stock Inventory"},
-      {to:"/admin/inventory/materials",icon:"list-rich",title:"Material Inventory"},
-      {to:"/admin/inventory/assets",icon:"list-rich",title:"Asset Inventory"},
-      {to:"/admin/inventory/others",icon:"list-rich",title:"Others Inventory"},
-    //   {to:"/admin/inventory/categorys",icon:"list-rich",title:"Categories"},
-    ],
-
-    production: [
-      {to:"/admin/productions/billofmaterials",icon:"list-rich",title:"Product Bible"},
-      {to:"/admin/productions/workorders",icon:"document",title:"Cutting Sheet"},
-      {to:"/admin/productions/workorders",icon:"document",title:"Work Orders"},
-    ],
+    import menulistgroupComponent from "@/components/dashboard/menulistgroup"
     
-    productionOLD: [
-      {to:"/admin/productions/billofmaterials",icon:"list-rich",title:"Bill of Materials"},
-      {to:"/admin/productions/workorders",icon:"document",title:"Work Orders"},
-      {to:"/admin/productions/processing",icon:"loop-circular",title:"Processing"},
-    ],
+    const submenu = {
+        records: [
+            {to:"/admin/records/teams",icon:"people",title:"Team List"},
+            {to:"/admin/records/clubs",icon:"people",title:"Club Form"},
+            {to:"/admin/records/players",icon:"people",title:"Players License"},
+            {to:"/admin/records/agreements",icon:"people",title:"Player Agreement Form"},
+            {to:"/admin/records/matchdetails",icon:"people",title:"Match Venue & Team Colours"},
+        ],
 
-    accounting: [
-      {to:"/admin/accountings/invoices",icon:"list-rich",title:"Invoices"},
-      {to:"/admin/accountings/accounts",icon:"list-rich",title:"Accounts"},
-      {to:"/admin/accountings/journals",icon:"list-rich",title:"Journals"},
-      {to:"/admin/accountings/ledgers",icon:"loop-circular",title:"Ledgers"},
-    ],
+        reports: [
+            {to:"",icon:"print",title:"Club Report"},
+            {to:"",icon:"print",title:"Match Report"},
+            {to:"",icon:"print",title:"Player Report"},
+            {to:"",icon:"print",title:"League Report"},
+            {to:"",icon:"print",title:"Birthday Report"},
+            {to:"",icon:"print",title:"Performance Report"},
+        ],
 
-    security: [
-      {to:"/admin/security/users",icon:"people",title:"Users"},
-			{to:"/admin/security/roles",icon:"cog",title:"Roles"},
-			{to:"/admin/security/permissions",icon:"lock-locked",title:"Permissions"},
-			// {to:"/admin/security/sshserver",icon:"terminal",title:"SSH Server"},
-			// {to:"/admin/security/caddyserver",icon:"globe",title:"Caddy Server"},
-			{to:"/admin/security/database",icon:"cloudy",title:"Database Admin"},
-    ],
 
-    //REMOVE BELOW MENUS
+        maintenance: [
+            {to:"",icon:"people",title:"Venue Setup"},
+            {to:"",icon:"people",title:"League Management"},
+        ],
 
-    marketing: [
-      {to:"/admin/marketing/seocontents",icon:"graph",title:"SEO"},
-			{to:"/admin/marketing/blogs",icon:"bullhorn",title:"Blogs"},
-			{to:"/admin/marketing/campaigns",icon:"browser",title:"Campaigns"},
-			{to:"/admin/marketing/newsletters",icon:"envelope-open",title:"Newsletters"},
-			{to:"/admin/marketing/medias",icon:"image",title:"Media Gallery"},
-    ],
+        security: [
+            {to:"/admin/security/users",icon:"people",title:"Users"},
+            {to:"/admin/security/roles",icon:"cog",title:"Roles"},
+            {to:"/admin/security/permissions",icon:"lock-locked",title:"Permissions"},
+            {to:"/admin/security/database",icon:"cloudy",title:"Database Admin"},
+        ],
+    }
 
-    accountingOLD: [
-      {to:"/admin/accounting/charts",icon:"box",title:"Ledgers"},
-			{to:"/admin/accounting/accounts",icon:"book",title:"Accounts"},
-			{to:"/admin/accounting/journals",icon:"document",title:"Journals"},
-			{to:"/admin/accounting/reports",icon:"print",title:"Reports"},
-    ],
-
-    supplychain: [
-      {to:"/admin/supplychain/items",icon:"list-rich",title:"Items"},
-			{to:"/admin/supplychain/pricelists",icon:"list-rich",title:"Pricelists"},
-			{to:"/admin/supplychain/quotations",icon:"document",title:"Quotations"},
-			{to:"/admin/supplychain/orders",icon:"document",title:"Orders"},
-			{to:"/admin/supplychain/invoices",icon:"document",title:"Invoices"},
-			{to:"/admin/supplychain/categorys",icon:"cog",title:"Categorys"}, 
-    ],
-
-    analytics: [
-      {to:"/admin/analytics/hits",icon:"target",title:"Hits"},
-			{to:"/admin/analytics/blacklists",icon:"ban",title:"Blacklists"},
-			{to:"/admin/analytics/activations",icon:"task",title:"Activations"},
-    ],
-
-    communications: [
-      {to:"/admin/communications/sms",icon:"phone",title:"SMS"},
-			{to:"/admin/communications/ssh",icon:"terminal",title:"SSH"},
-			{to:"/admin/communications/smtp",icon:"envelope-closed",title:"SMTP"},
-			{to:"/admin/communications/domains",icon:"globe",title:"Domains"},
-			{to:"/admin/communications/documentations",icon:"document",title:"Documentations"},
-    ],
-
-    
-  }
-  export default {
-    data() {return{
-      submenu
-    }},
-    components: {
-      "menulistgroup": menulistgroupComponent,
-    },
-  }
+    export default {
+        data() {return{
+            submenu, searchtext:"", menuList:[],
+        }},
+        components: {
+            "menulistgroup": menulistgroupComponent,
+        },
+        methods:{
+            searchMenu(){
+                this.menuList = []
+                var menuList = []
+                
+                if (this.searchtext.length > 2 ){
+                    for (var menu in submenu) {
+                        for (var j=0; j < submenu[menu].length; j++){
+                            var searchString = submenu[menu][j].title
+                            if (searchString.toLowerCase().indexOf(this.searchtext.toLowerCase()) != -1){
+                                menuList.push(submenu[menu][j]);
+                            }
+                        }
+                    }
+                }
+                this.menuList = menuList
+            }
+        
+        }
+    }
 </script>

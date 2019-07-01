@@ -4,13 +4,13 @@
 
     <div class="w-100 relative white">
         <nav @click="toggleMenu" class="w-100 center cf f6 f5-ns inline-flex items-center fw5 h3 bg-white fixed  z-max">
-            <span class="fl w-70 dark-green">
+            <span class="fl w-80 dark-green">
                 <span  class="ml2 dib dn-l fas fa-bars"></span>
-                <span class=" pl2 f5 f6-ns"> NFF - Ekiti State </span>
+                <span class=" pl2 f5 f6-ns"> Ekiti State Football Association </span>
             </span>
-            <span class="fl w-30 pa2">
+            <span class="fl w-20 pa2">
                 <router-link :to="{name: 'dashboard'}">
-                    <img src="@/assets/logo.png" class="h3 fr" />
+                    <img src="@/assets/logo.png" class="w3 fr" />
                 </router-link>
             </span>
         </nav>
@@ -20,16 +20,17 @@
       <div class="cf">
         <div class="fl h3 w-100"></div>
         <menulist class="top-0 left-0 vh-100 z-max fixed absolute relative-l dn db-l" :class="{'slideInLeft':lShow, 'slideOutLeft':!lShow}">
+          
           <template slot="default">
-            <li class="dim pointer"  @click="toggleMenu">    
+            <li class="pointer"  @click="toggleMenu">    
                 <div class="ph2 w-100 center cf f6 f5-ns inline-flex items-center fw5 h3 bg-white fixed dn-l red">
                     <i class="fas fa-times-circle"></i>
                     <span class=" pl2 f5 f6-ns">
-                        NFF - Ekiti State
+                        Ekiti State Football Association
                     </span>
                 </div>
-
             </li>
+            <li class="h3 fl w-100 dn-l"> </li>
           </template>
         </menulist>
         

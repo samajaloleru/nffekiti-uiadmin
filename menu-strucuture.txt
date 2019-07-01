@@ -1,8 +1,11 @@
 Menu
     - Records
-        - Matches
-        - Players
-        - Clubs
+        - Club Form
+        - Team List
+        - Player License
+        - Player Agreement Form
+        - Match Venues & Team Colours
+
 
     - Reports
         - Club Report
@@ -10,12 +13,11 @@ Menu
         - Player Report
         - League Report
         - Birthday Report
-        - Performanc Report
+        - Performance Report
 
     - Maintenance
-        - Leagues
-        - Stadiums
-        - Printers
+        - Venue Setup
+        - League Management
 
     - Security
         - Users

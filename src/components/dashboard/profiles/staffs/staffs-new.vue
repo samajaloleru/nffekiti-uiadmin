@@ -1,11 +1,11 @@
 <template>
     <section class="pa2 pa3-l">
-      <div class="w-100 pa2 bg-light-gray br4 cf inline-flex items-center relative">
+      <div class="w-100 pa2 bg-light-gray br2 cf inline-flex items-center relative">
         <div class="fl bg-light-gray pa2 pb fw5 tracked ttu f7 black ">
           Staffs / New
         </div>
         <router-link :to="{name:'staffs-search'}" class="fl right-1 absolute ph2 pv1 br4 bg-dark-red grow-ns pointer f6 white tc no-underline">
-          Go Back
+          Back
         </router-link>
       </div>
 
@@ -148,8 +148,8 @@
 
         
         <div class="fl w-100 pa1">
-          <div v-if="isSave" class="fr ph3 pv2 br4 bg-green pointer f6 white tc no-underline"  @click="save" >
-            Submit
+          <div v-if="isSave" class="fr ph3 pv2 br2 bg-green pointer f6 white tc no-underline"  @click="save" >
+           <i class="fas fa-save"></i> Submit
           </div>
         </div>
       </div>

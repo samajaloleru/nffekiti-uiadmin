@@ -1,11 +1,11 @@
 <template>
     <section class="pa2 pa3-l">
-      <div class="w-100 pa2 bg-light-gray br4 cf inline-flex items-center relative">
+      <div class="w-100 pa2 bg-light-gray br2 cf inline-flex items-center relative">
         <div class="fl bg-light-gray pa2 pb fw5 tracked ttu f7 black ">
           Suppliers / New
         </div>
         <router-link :to="{name:'suppliers-search'}" class="fl right-1 absolute ph2 pv1 br4 bg-dark-red grow-ns pointer f6 white tc no-underline">
-          Go Back
+          Back
         </router-link>
       </div>
 
@@ -192,7 +192,7 @@
         
         <div class="fl w-100 tc pv3">
           <span v-if="isSave" class="ph3 pv2 br4 bg-green pointer f6 white tc no-underline"  @click="save" >
-            Submit
+           <i class="fas fa-save"></i> Submit
           </span>
         </div>
       </div>

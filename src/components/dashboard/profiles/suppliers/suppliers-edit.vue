@@ -1,11 +1,11 @@
 <template>
     <section class="pa2 pa3-l">
-      <div class="w-100 pa2 bg-light-gray br4 cf inline-flex items-center relative">
+      <div class="w-100 pa2 bg-light-gray br2 cf inline-flex items-center relative">
         <div class="fl bg-light-gray pa2 pb fw5 tracked ttu f7 black ">
           Supplier / Edit
         </div>
         <router-link :to="{name:'suppliers-view',params:{id:record.ID}}" class="fl right-1 absolute ph2 pv1 br4 bg-red hover-bg-dark-red grow-ns pointer f6 white tc no-underline">
-          Go Back
+          Back
         </router-link>
       </div>
 
@@ -202,7 +202,7 @@
           
             <div class="fl w-100 pa1 tc pv3">
                 <span class="ph3 pv2 br4 bg-green pointer f6 white tc no-underline"  @click="save" >
-                    Save
+                    <i class="fas fa-check"></i> Save
                 </span>
             </div>
         </div>
