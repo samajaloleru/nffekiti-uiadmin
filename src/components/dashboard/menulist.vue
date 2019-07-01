@@ -13,12 +13,11 @@
         </router-link>
          </li>
         
-        <menulistgroup title="Profiles" :submenu="submenu.profiles"/>        
-        <menulistgroup title="Inventory" :submenu="submenu.inventory"/>
-        <menulistgroup title="Production Manager" :submenu="submenu.production"/>
-        <menulistgroup title="Order Manager" :submenu="submenu.orders"/>
-        <menulistgroup title="Financial Accounting" :submenu="submenu.accounting"/>
-        <menulistgroup title="System Security" :submenu="submenu.security"/>
+        <menulistgroup title="Records" :submenu="submenu.records"/>        
+        <menulistgroup title="Reports" :submenu="submenu.reports"/>
+        <menulistgroup title="Maintenance" :submenu="submenu.maintenance"/>
+        <menulistgroup title="Security" :submenu="submenu.security"/>
+
 
           <li class="ph2 bg-black-80 dim" >
             <router-link  class="no-underline" to="/">
@@ -38,47 +37,26 @@
   import menulistgroupComponent from "@/components/dashboard/menulistgroup"
   const submenu = {
    
-    profiles: [
-        {to:"/admin/profiles/players",icon:"people",title:"Players"},
-        {to:"/admin/profiles/suppliers",icon:"people",title:"Suppliers"},
-        {to:"/admin/profiles/staffs",icon:"people",title:"Staffs"},
-        {to:"/admin/profiles/documents",icon:"box",title:"Documents"},
-        {to:"/admin/profiles/settings",icon:"cog",title:"Settings"},
+    records: [
+        {to:"/admin/records/matches",icon:"people",title:"Matches"},
+        {to:"/admin/records/players",icon:"people",title:"Players"},
+        {to:"/admin/records/clubs",icon:"people",title:"Clubs"},
     ],
 
-    orders: [
-        {to:"/admin/orders/pricelists",icon:"list-rich",title:"Pricelists"},
-        {to:"/admin/orders/sales",icon:"list-rich",title:"Sales Order"},
-        {to:"/admin/orders/purchases",icon:"list-rich",title:"Purchase Orders"},
-        {to:"/admin/orders/receivings",icon:"list-rich",title:"Order Receivings"},
+    reports: [
+        {to:"/admin/reports/club report",icon:"list-rich",title:"Club Report"},
+        {to:"/admin/reports/match report",icon:"list-rich",title:"Match Report"},
+        {to:"/admin/reports/player report",icon:"list-rich",title:"Player Report"},
+        {to:"/admin/reports/league report",icon:"list-rich",title:"League Report"},
+        {to:"/admin/reports/birthday report",icon:"list-rich",title:"Birthday Report"},
+        {to:"/admin/reports/performance report",icon:"list-rich",title:"Performance Report"},
     ],
 
-    inventory: [
-    //   {to:"/admin/inventory/items",icon:"list-rich",title:"Items"},
-      {to:"/admin/inventory/stocks",icon:"list-rich",title:"Stock Inventory"},
-      {to:"/admin/inventory/materials",icon:"list-rich",title:"Material Inventory"},
-      {to:"/admin/inventory/assets",icon:"list-rich",title:"Asset Inventory"},
-      {to:"/admin/inventory/others",icon:"list-rich",title:"Others Inventory"},
-    //   {to:"/admin/inventory/categorys",icon:"list-rich",title:"Categories"},
-    ],
 
-    production: [
-      {to:"/admin/productions/billofmaterials",icon:"list-rich",title:"Product Bible"},
-      {to:"/admin/productions/workorders",icon:"document",title:"Cutting Sheet"},
-      {to:"/admin/productions/workorders",icon:"document",title:"Work Orders"},
-    ],
-    
-    productionOLD: [
-      {to:"/admin/productions/billofmaterials",icon:"list-rich",title:"Bill of Materials"},
-      {to:"/admin/productions/workorders",icon:"document",title:"Work Orders"},
-      {to:"/admin/productions/processing",icon:"loop-circular",title:"Processing"},
-    ],
-
-    accounting: [
-      {to:"/admin/accountings/invoices",icon:"list-rich",title:"Invoices"},
-      {to:"/admin/accountings/accounts",icon:"list-rich",title:"Accounts"},
-      {to:"/admin/accountings/journals",icon:"list-rich",title:"Journals"},
-      {to:"/admin/accountings/ledgers",icon:"loop-circular",title:"Ledgers"},
+    maintenance: [
+      {to:"/admin/maintenance/leagues",icon:"list-rich",title:"Leagues"},
+      {to:"/admin/maintenance/stadiums",icon:"document",title:"Stadiums"},
+      {to:"/admin/maintenance/printers",icon:"document",title:"Printers"},
     ],
 
     security: [
@@ -88,46 +66,6 @@
 			// {to:"/admin/security/sshserver",icon:"terminal",title:"SSH Server"},
 			// {to:"/admin/security/caddyserver",icon:"globe",title:"Caddy Server"},
 			{to:"/admin/security/database",icon:"cloudy",title:"Database Admin"},
-    ],
-
-    //REMOVE BELOW MENUS
-
-    marketing: [
-      {to:"/admin/marketing/seocontents",icon:"graph",title:"SEO"},
-			{to:"/admin/marketing/blogs",icon:"bullhorn",title:"Blogs"},
-			{to:"/admin/marketing/campaigns",icon:"browser",title:"Campaigns"},
-			{to:"/admin/marketing/newsletters",icon:"envelope-open",title:"Newsletters"},
-			{to:"/admin/marketing/medias",icon:"image",title:"Media Gallery"},
-    ],
-
-    accountingOLD: [
-      {to:"/admin/accounting/charts",icon:"box",title:"Ledgers"},
-			{to:"/admin/accounting/accounts",icon:"book",title:"Accounts"},
-			{to:"/admin/accounting/journals",icon:"document",title:"Journals"},
-			{to:"/admin/accounting/reports",icon:"print",title:"Reports"},
-    ],
-
-    supplychain: [
-      {to:"/admin/supplychain/items",icon:"list-rich",title:"Items"},
-			{to:"/admin/supplychain/pricelists",icon:"list-rich",title:"Pricelists"},
-			{to:"/admin/supplychain/quotations",icon:"document",title:"Quotations"},
-			{to:"/admin/supplychain/orders",icon:"document",title:"Orders"},
-			{to:"/admin/supplychain/invoices",icon:"document",title:"Invoices"},
-			{to:"/admin/supplychain/categorys",icon:"cog",title:"Categorys"}, 
-    ],
-
-    analytics: [
-      {to:"/admin/analytics/hits",icon:"target",title:"Hits"},
-			{to:"/admin/analytics/blacklists",icon:"ban",title:"Blacklists"},
-			{to:"/admin/analytics/activations",icon:"task",title:"Activations"},
-    ],
-
-    communications: [
-      {to:"/admin/communications/sms",icon:"phone",title:"SMS"},
-			{to:"/admin/communications/ssh",icon:"terminal",title:"SSH"},
-			{to:"/admin/communications/smtp",icon:"envelope-closed",title:"SMTP"},
-			{to:"/admin/communications/domains",icon:"globe",title:"Domains"},
-			{to:"/admin/communications/documentations",icon:"document",title:"Documentations"},
     ],
 
     

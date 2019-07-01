@@ -1,37 +1,29 @@
 --- NEW ---
 
-Profiles
-    Staff
-    Customer
-    Suppliers
-    Documents
-    Settings
+Records
+    Matches
+    Players
+    Clubs
 
-Orders
-    Sales
-    Pricelist
-    Purchases
-    Receiving
+Reports
+    Club Report
+    Match Report
+    Player Report
+    League Report
+    Birthday Report
+    Performance Report
 
-Inventory
-    Items
-    Stocks
-    Transfers
 
-Production
-    Bill of Materials
-    Work Orders
-    Processing
+Maintenance
+    Leagues
+    Stadiums
+    Printers
 
-Financial Accounting
-    Invoices
-    Chart of Accounts
-    Bank Reconciliation
-
-Support
+Security
     Users
     Roles
     Permissions
+    Database
     
 --- OLD ---
 
