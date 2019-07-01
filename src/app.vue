@@ -19,7 +19,6 @@
 
 
 <style media="screen">
-    /* @import "assets/css/tachyons.min.css"; */
     @import "assets/css/open-iconic.min.css";
     @import "assets/css/fontawesomepro.css";
     @import "assets/css/custom.min.css";

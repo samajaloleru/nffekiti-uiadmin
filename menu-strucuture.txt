@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 --- NEW ---
 
 Records
@@ -82,3 +83,31 @@ Security
     Database Admin
 
 
+=======
+Menu
+    - Records
+        - Club Form
+        - Team List
+        - Player License
+        - Player Agreement Form
+        - Match Venues & Team Colours
+
+
+    - Reports
+        - Club Report
+        - Match Report
+        - Player Report
+        - League Report
+        - Birthday Report
+        - Performance Report
+
+    - Maintenance
+        - Venue Setup
+        - League Management
+
+    - Security
+        - Users
+        - Roles
+        - Permissions
+        - Database
+>>>>>>> 36bf25fdef33d13f0a94841b9ff88ec4774d3518

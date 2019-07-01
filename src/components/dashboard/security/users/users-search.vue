@@ -1,79 +1,78 @@
 <template>
-		<section class="pa2 pa3-l">
-			<div class="w-100 pa2 bg-light-gray br4 cf inline-flex items-center relative">
-				<div class="fl bg-light-gray pa2 pb fw5 tracked ttu f7 black ">
-					Users / Search
-				</div>
+    <section>
 
-				<router-link :to="{'name':'users-new'}" class="fl right-1 absolute ph2 pv1 br4 bg-red hover-bg-dark-red grow-ns pointer f6 white tc no-underline">
-					+ New
-				</router-link>
-			</div>
+        <div class="w-100 pa2 bg-green fixed z-999 cf inline-flex-ns items-center-ns relative">
+            <div class="fl w-100 pa1 tc tl-ns pb fw5 tracked ttu f7 white ">
+                System Security / Users / Search
+            </div>
 
-			<div class="cf pv3"></div>
+            <div class="white pa2 br1 tc tr-ns f7 fl w-100 db dib-ns absolute-ns left-0-ns w-80-l">
+                <span class="pr4">
+                    1 -
+                    <input type="number" class="w2 green bn tc br2 bg-white" v-model.number="search.limit">
+                    of page
+                    <input type="number" class="w2 green bn tc br2 bg-white" @click="searchRecords" min="1" v-model.number="search.page"> 
+                </span>
+                <router-link :to="{'name':'users-new'}" class="ph2  br1 bg-near-black near-white pointer f6 tc no-underline">
+                    <i class="fas fa-plus"></i> New
+                </router-link>
+            </div>
+        </div>
 
-			<div class="cf w-100">
-				<div class="black fl w-50 dib tl h2 f7">
-					<span class="bg-black white pa2 br1 fl">page: 
-						<input type="number" class="w3 black bn tc br2 bg-white " @click="searchRecords" min="1" v-model.number="search.page">
-					</span>
-				</div>
-				<div class="black fr w-50 dib tr h2 f7">
-					<span class="bg-black white pa2 br1 fr">
-						<input type="number" class="w3 black bn tc br2 bg-white " v-model.number="search.limit">
-						records
-					</span>
-				</div>
-			</div>
+        <div class="w-100 fl h3"></div>
 
-			<table-display>
-				<template slot="tableHead">
-					<tr class="tl bg-black black f7">
-						<td class="tc">
-							<span @click="searchRecords" class="oi bg-green white pv1 b db" data-glyph="magnifying-glass"></span>
-						</td>
-						<td class="">
-							<input type="text" v-model="search.filter.username" placeholder="Username" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
-						</td>
-						<td class="">
-							<input type="text" v-model="search.filter.email" placeholder="Email" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
-						</td>
-						<td class="">
-							<input type="text" v-model="search.filter.profile" placeholder="Profile" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
-						</td>
-						<td class="">
-							<input type="text" v-model="search.filter.workflow" placeholder="Status" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
-						</td>
-					</tr>
-					<tr class="tl bg-black white">
-						<td class=""></td>
-						<td class="pa2">Username</td>
-						<td class="pa2">Email</td>
-						<td class="pa2">Profile</td>
-						<td class="pa2">Status</td>
-					</tr>
-				</template>
-				<template slot="tableBody" v-if="recordList.length > 0">
-					<tr class="stripe-dark" v-for="(user, index) in recordList" :key="index">
-						<td class="tc">
-							<router-link data-glyph="eye" class="f6 oi br-pill bg-green hover-bg-dark-green ph1 pt1 near-white" :to="{name:'users-view',params:{id:user.ID}}" ></router-link>
-						</td>
-						<td class=" pa2"> 
-							<span class="f7">#{{(index+1)+(search.skip*search.limit)}}.</span> {{user.Username}}
-						</td>
-						<td class=" pa2">{{user.Email}}</td>
-						<td class=" pa2">{{user.Profile}}</td>
-						<td class=" pa2">{{user.Workflow}}</td>
-						
-					</tr>
-				</template>
-			</table-display>
+        <div class="pv2 fl w-100">
+            <table-display>
+                <template slot="tableHead">
+                    <tr class="tl bg-near-lack black f7">
+                        <td class="tc bg-near-black">
+                            <i @click="searchRecords" class="fas near-white fa-search"></i>
+                        </td>
+                        <td class="">
+                            <input type="text" v-model="search.filter.username" placeholder="Username" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
+                        </td>
+                        <td class="">
+                            <input type="text" v-model="search.filter.email" placeholder="Email" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
+                        </td>
+                        <td class="">
+                            <input type="text" v-model="search.filter.profile" placeholder="Profile" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
+                        </td>
+                        <td class="">
+                            <input type="text" v-model="search.filter.workflow" placeholder="Status" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
+                        </td>
+                    </tr>
+                    <tr class="tl bg-gray white">
+                        <td class=""></td>
+                        <td class="pa2">Username</td>
+                        <td class="pa2">Email</td>
+                        <td class="pa2">Profile</td>
+                        <td class="pa2">Status</td>
+                    </tr>
+                </template>
+                <template slot="tableBody" v-if="recordList.length > 0">
+                    <tr class="stripe-dark" v-for="(user, index) in recordList" :key="index">
+                        <td class="tc">
+                            <router-link class="mid-gray hover-green" :to="{name:'users-view',params:{id:user.ID}}">
+                                <i class="fas fa-circle"></i>
+                            </router-link>
+                        </td>
+                        <td class=" pa2"> 
+                            <span class="f7">#{{(index+1)+(search.skip*search.limit)}}.</span> {{user.Username}}
+                        </td>
+                        <td class=" pa2">{{user.Email}}</td>
+                        <td class=" pa2">{{user.Profile}}</td>
+                        <td class=" pa2">{{user.Workflow}}</td>
+                        
+                    </tr>
+                </template>
+            </table-display>
 
-			<div v-if="recordList.length < 1">
-				<h1 class="black f6 tc ma5">There are currently no users record </h1>
-			</div>
-			
-		</section>
+            <div v-if="recordList.length < 1">
+                <h1 class="black f6 tc ma5">There are currently no users record </h1>
+            </div>
+        </div>
+        
+    </section>
 </template>
 
 <script type="text/javascript">
@@ -83,7 +82,7 @@
 	export default {
 		data() {return{
 			url: "/api/users", recordList: [],
-			search: {text: "", field: "Username", limit: 100, page:1, skip: 0, filter:{}},
+			search: {text: "", field: "Username", limit: 50, page:1, skip: 0, filter:{}},
 		}},
 		components: { tableDisplay },
 		created() {this.searchRecords()},

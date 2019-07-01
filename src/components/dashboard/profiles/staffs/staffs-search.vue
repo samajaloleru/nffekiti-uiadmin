@@ -1,6 +1,6 @@
 <template>
     <section class="pa2 pa3-l">
-      <div class="w-100 pa2 bg-light-gray br4 cf inline-flex items-center relative">
+      <div class="w-100 pa2 bg-light-gray br2 cf inline-flex items-center relative">
         <div class="fl bg-light-gray pa2 pb fw5 tracked ttu f7 black ">
           Staffs / Search
         </div>
@@ -89,7 +89,7 @@
   export default {
     data() {return{
       url: "/api/staffs", recordList: [],
-      search: {text: "", field: "Fullname", limit: 100, page:1, skip: 0, 
+      search: {text: "", field: "Fullname", limit: 50, page:1, skip: 0, 
           filter:{fullname:"",phone:"",station:"",state:"",workstatus:""}
         },
     }},

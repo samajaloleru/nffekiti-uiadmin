@@ -1,17 +1,17 @@
 <template>
 	<section class="pa2 pa3-l">
-		<div class="w-100 pa2 bg-light-gray br4 cf inline-flex items-center relative">
+		<div class="w-100 pa2 bg-light-gray br2 cf inline-flex items-center relative">
 			<div class="fl bg-light-gray pa2 pb fw5 tracked ttu f7 black ">
 				Documents / Edit
 			</div>
 			<router-link :to="{name:'documents-view',params:{id:record.ID}}" class="fl right-1 absolute ph2 pv1 br4 bg-red hover-bg-dark-red grow-ns pointer f6 white tc no-underline">
-				Go Back
+				Back
 			</router-link>
 		</div>
 
 		<notify class="mv2" :notifications="notifications"></notify>
 
-		<div v-if="isFound" class="pa2 bg-light-gray br4 cf">
+		<div v-if="isFound" class="pa2 bg-washed-yellow br1 cf">
 			<div class="fl w-20-l w-25-m w-100 tc pa2">
 				<a class="pointer link" :href="record.Filepath" target="_blank">
 					<img :src="documentIcon" class="w4 br-100 bg-near-white pa1" />
@@ -88,7 +88,7 @@
 				</div>
 
 				<div class="fl w-100 mt3">
-					<div class="fr ph3 pv2 br4 bg-green grow-ns pointer f6 white tc no-underline"  @click="save" >
+					<div class="fr ph3 pv2 br1 bg-near-black near-white grow-ns pointer f6 tc no-underline"  @click="save" >
 						Save
 					</div>
 				</div>

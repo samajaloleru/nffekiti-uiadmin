@@ -13,19 +13,9 @@ import menuBasedComponent from "@/components/menuBased"
 
 import dashboardComponent from "@/components/dashboard/home"
 
-import profilesRoutes from "@/components/dashboard/profiles/routes.vue"
-import ordersRoutes from "@/components/dashboard/orders/routes.vue"
-import productionsRoutes from "@/components/dashboard/productions/routes.vue"
-import accountingsRoutes from "@/components/dashboard/accountings/routes.vue"
-import inventoryRoutes from "@/components/dashboard/inventory/routes.vue"
+import recordsRoutes from "@/components/dashboard/records/routes.vue"
+import reportsRoutes from "@/components/dashboard/reports/routes.vue"
 
-
-
-// import reportsRoutes from "@/components/dashboard/reports/routes.vue"
-// import supplychainRoutes from "@/components/dashboard/supplychain/routes.vue"
-// import pointofsaleRoutes from "@/components/dashboard/pointofsale/routes.vue"
-// import marketingRoutes from "@/components/dashboard/marketing/routes.vue"
-// import maintenanceRoutes from "@/components/dashboard/maintenance/routes.vue"
 import securityRoutes from "@/components/dashboard/security/routes.vue"
 
 
@@ -37,51 +27,29 @@ Vue.use(Router)
 const router =  new Router({
     mode: "hash",
     routes: [
-      { path: '', component: signinComponent },
-      { path: '/signin', component: signinComponent },
-      { path: '/forgot', component: forgotComponent },
+        { path: '', component: signinComponent },
+        { path: '/signin', component: signinComponent },
+        { path: '/forgot', component: forgotComponent },
 
-      { path: '/admin', component: menuBasedComponent,
-        children: [
-			{ path: '', component: dashboardComponent, name: 'dashboard'},
-			
-			{
-				path: 'profiles',
-				component: profilesRoutes,
-				children: profilesRoutes.children
-			}, 
-			
-			{
-				path: 'orders',
-				component: ordersRoutes,
-				children: ordersRoutes.children
-			},
-			
-			{
-				path: 'inventory',
-				component: inventoryRoutes,
-				children: inventoryRoutes.children
-			},
-			
-			{
-				path: 'productions',
-				component: productionsRoutes,
-				children: productionsRoutes.children
-			},
-			
-			{
-				path: 'accountings',
-				component: accountingsRoutes,
-				children: accountingsRoutes.children
-			},
-			
-			{
-			path: 'security',
-			component: securityRoutes,
-			children: securityRoutes.children
-			},
-      ] }
-
+        { path: '/admin', component: menuBasedComponent,
+            children: [
+                { 
+                    path: '', 
+                    component: dashboardComponent, 
+                    name: 'dashboard'
+                },
+                {
+                    path: 'records',
+                    component: recordsRoutes,
+                    children: recordsRoutes.children
+                }, 
+                {
+                    path: 'security',
+                    component: securityRoutes,
+                    children: securityRoutes.children
+                },
+            ]
+        }
     ]
   })
 

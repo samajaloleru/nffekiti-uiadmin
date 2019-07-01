@@ -325,7 +325,7 @@ input[type=date], input[type=time],
 input[type=datetime-local] {
     box-sizing: border-box; 
 }
-input, textarea { background-color: rgba(0,0,0,0.2) ; }
+/* input, textarea { background-color: rgba(0,0,0,0.025) ; } */
 
 .signin::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */

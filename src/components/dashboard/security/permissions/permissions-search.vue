@@ -1,6 +1,6 @@
 <template>
     <section class="pa2 pa3-l">
-      <div class="w-100 pa2 bg-light-gray br4 cf inline-flex items-center relative">
+      <div class="w-100 pa2 bg-light-gray br2 cf inline-flex items-center relative">
         <div class="fl bg-light-gray pa2 pb fw5 tracked ttu f7 black ">
           Permissions / Search
         </div>
@@ -94,7 +94,7 @@
   export default {
     data() {return{
       url: "/api/permissions", recordList: [],
-      search: {text: "", field: "Title", limit: 100, page:1, skip: 0, filter:{}},
+      search: {text: "", field: "Title", limit: 50, page:1, skip: 0, filter:{}},
     }},
     components: { tableDisplay },
     created() {this.searchRecords()},

@@ -58,7 +58,7 @@
   export default {
 	data() {return{
 	  url:"/api/documents", recordList:[], isChecked:false, isSave:false,
-	  search:{text: "", field: "Workflow", limit: 100, page:1, skip: 0, filter:{}, RefField:"OwnerID", RefID: parseInt(this.refid)}
+	  search:{text: "", field: "Workflow", limit: 50, page:1, skip: 0, filter:{}, RefField:"OwnerID", RefID: parseInt(this.refid)}
 	}},
 	props:['refid'],
 	components: { tableDisplay },

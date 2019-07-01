@@ -2,17 +2,16 @@
   <section class="">
 
     <loadingscreen/>
-    
-      <template>
+
         <div class="center mw7 mw6-l" >
-          <article class="dt center tc vh-100 min-vh-100 w-100 ph0-l pa3" style="max-width:350px">
+          <article class="dt min-vh-100 w-100 ph0-l pa3 center" style="max-width:350px">
 
-                   <img src="@/assets/logo.png" class="pb2 pt4 h4 tc " />
+              <div class="dtc v-mid tc center " style="" >
 
-              <div class="cf bg-transparent ba b--near-white br2 center pa3 " style="" >
+                <img src="@/assets/logo.png" class="h4 tc " />
 
                 <div class="w-100 fl">
-                  <p class="cf db w-100 f5 pt2 pb2 black fw4">Sign in to your Plus-Fab account</p>
+                  <p class="cf db w-100 f5 pt2 pb2 mid-gray tracked fw4">Sign in to your NFF Ekiti Account</p>
                 </div>
 
 
@@ -21,30 +20,30 @@
                 <div  class="center">
 
                   <div class="cf w-100 pv3">
-                    <input class="signin f6 fw3 bn pa2 dib w-100 black" type="text" placeholder="Username" @keyup="keyUp" v-model="username" />
+                    <input class="f6 fw3 bn pa2 dib w-100 black br1 bg-washed-green" type="text" placeholder="Username" @keyup="keyUp" v-model="username" />
                   </div>
 
                   <div class="cf w-100 pv3">
-                    <input class="signin f6 fw3 bn pa2 dib w-100 black" type="password" placeholder="Password" @keyup="keyUp" v-model="password" />
+                    <input class="f6 fw3 bn pa2 dib w-100 black br1 bg-washed-green" type="password" placeholder="Password" @keyup="keyUp" v-model="password" />
                     <router-link to="/forgot" class="cf no-underline">
                       <p class="fr gray f7">Forgot Password?</p>
                     </router-link>
                   </div>
 
-                  <span class="cf tl no-underline inline-flex items-center pa2 white button relative pointer"  @click="login()">
+                  <span class="cf tl no-underline inline-flex items-center pa2 white bg-green br1 relative pointer"  @click="login()">
                       SIGN IN
-                      <img src="@/assets/arrow-right.png" class="pl3 fr"/>
+                      <i class="pl1 fas fa-sign-in"></i>
                   </span>
 
-                  <div class="cf w-100 pt4">
-                      <p class="f7"> 2019 © Plus-fab</p>
+                  <div class="cf w-100 pt4 mid-gray">
+                      <p class="f7"> 2019 © NFF Ekiti State</p>
                   </div>
                 </div>
               </div>
 
           </article>
         </div>
-      </template>
+      
       
   </section>
 </template>

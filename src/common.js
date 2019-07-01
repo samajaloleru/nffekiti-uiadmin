@@ -2,9 +2,8 @@ import axios from "axios";
 
 export const HTTP = axios.create({
   baseURL: ``,
-  baseURL: `https://plusfab.shop`,
-  // baseURL: `http://localhost:5151`,
-  //   baseURL: `http://10.5.50.97:5151`,
+//   baseURL: `https://nffekiti.essentials.ng`,
+//   baseURL: `http://localhost:5353`,
   headers: {
     Authorization: "Bearer {token}"
   }
@@ -24,17 +23,17 @@ export function checkRedirect(respData) {
 }
 
 export function checkPermissions() {
-  HTTP.get("/api/permissions", {
-    withCredentials: true
-  })
-    .then(response => {
-      checkRedirect(response.data);
-    })
-    .catch(e => {
-      if (window.location.hash !== "#/") {
-        window.location.href = "/";
-      }
-    });
+//   HTTP.get("/api/permissions", {
+//     withCredentials: true
+//   })
+//     .then(response => {
+//       checkRedirect(response.data);
+//     })
+//     .catch(e => {
+//       if (window.location.hash !== "#/") {
+//         window.location.href = "/";
+//       }
+//     });
 }
 
 export function getDate() {
