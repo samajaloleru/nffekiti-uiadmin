@@ -1,3 +1,89 @@
+<<<<<<< HEAD
+--- NEW ---
+
+Records
+    Matches
+    Players
+    Clubs
+
+Reports
+    Club Report
+    Match Report
+    Player Report
+    League Report
+    Birthday Report
+    Performance Report
+
+
+Maintenance
+    Leagues
+    Stadiums
+    Printers
+
+Security
+    Users
+    Roles
+    Permissions
+    Database
+    
+--- OLD ---
+
+POS
+    Register
+    Inventory
+    Receipts
+    Sales
+
+Profiles
+    Staffs
+    Partners
+    Customers
+    Documents
+    Settings
+
+Marketing
+    SEO
+    Blogs
+    Campaigns
+    Newsletters
+    Media Gallery
+
+Accounting
+    Ledgers
+    Accounts
+    Journals
+    Reports
+
+Supply Chain
+    Items
+    Pricelists
+    Quotations
+    Orders
+    Invoices
+    Categorys
+
+Analytics
+    Hits
+    Blacklists
+    Activations
+
+Communications
+    SMS
+    SSH
+    SMTP
+    Domains
+    Documentations
+
+Security
+    Users
+    Roles
+    Permissions
+    SSH Server
+    Caddy Server
+    Database Admin
+
+
+=======
 Menu
     - Records
         - Club Form
@@ -24,3 +110,4 @@ Menu
         - Roles
         - Permissions
         - Database
+>>>>>>> 36bf25fdef33d13f0a94841b9ff88ec4774d3518

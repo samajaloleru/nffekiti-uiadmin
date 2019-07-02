@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const HTTP = axios.create({
   baseURL: ``,
-//   baseURL: `https://nffekiti.essentials.ng`,
+   baseURL: `https://nffekiti.essentials.ng`,
 //   baseURL: `http://localhost:5353`,
   headers: {
     Authorization: "Bearer {token}"

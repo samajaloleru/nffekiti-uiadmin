@@ -61,11 +61,11 @@
         ],
 
         reports: [
-            {to:"",icon:"print",title:"Club Report"},
+            {to:"/admin/reports/clubs",icon:"print",title:"Club Report"},
             {to:"",icon:"print",title:"Match Report"},
             {to:"",icon:"print",title:"Player Report"},
             {to:"",icon:"print",title:"League Report"},
-            {to:"",icon:"print",title:"Birthday Report"},
+            {to:"/admin/reports/birthdays",icon:"print",title:"Birthday Report"},
             {to:"",icon:"print",title:"Performance Report"},
         ],
 

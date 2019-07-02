@@ -44,6 +44,11 @@ const router =  new Router({
                     children: recordsRoutes.children
                 }, 
                 {
+                    path: 'reports',
+                    component: reportsRoutes,
+                    children: reportsRoutes.children
+                }, 
+                {
                     path: 'security',
                     component: securityRoutes,
                     children: securityRoutes.children
