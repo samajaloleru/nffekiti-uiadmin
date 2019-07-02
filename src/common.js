@@ -290,3 +290,34 @@ export function printLetterHead(elementID, app) {
         win.print()
     }, 5000);
 }
+
+
+export function printRecords(elementID, app) {
+    // var dimensions = "width=" + document.getElementById(elementID).clientWidth + "px";
+    
+    var win = window.open("", "", "width=900, height=1273"); // a window object 
+    win.document.open("text/html", "replace");
+    var docContent = "<HTML><HEAD><TITLE>Printing "
+    docContent +=  app.search.limit + " Records"
+    docContent += "</TITLE>"
+    docContent += "<link rel='stylesheet' href='https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css'/>"
+    docContent += "</HEAD><BODY>"
+
+    docContent += document.getElementById(elementID).innerHTML;
+    
+
+    if (window.print) {
+        docContent += '<center><input type=button name=print value="Print" onClick="window.print()"></center>';
+    }
+
+
+    docContent += "</BODY></HTML>"
+    win.document.write(docContent);
+    
+    // setTimeout(function () {
+        win.print()
+    // }, 2500);
+
+
+
+}

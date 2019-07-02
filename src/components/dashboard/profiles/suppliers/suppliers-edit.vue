@@ -267,7 +267,7 @@
           this.notifications.push(response.data)
           setTimeout(checkRedirect(response.data),1500)
 
-            if(response.data.Body !== null){
+            if(response.data.Body !== null && response.data.Body !== undefined ){
                 if(response.data.Code == 200){
                     app.$refs.documentlines.saveLines(response.data.Body);
                 }

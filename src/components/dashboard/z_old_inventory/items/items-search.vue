@@ -117,7 +117,7 @@
 
 				HTTP.post(app.url+'/search', app.search,{withCredentials: true}).then((response) => {
 					
-					if (response.data.Body !== null ) {
+					if (response.data.Body !== null && response.data.Body !== undefined ) {
 						app.recordList = response.data.Body
 					}
 				}).catch((e) => { console.log(e) })

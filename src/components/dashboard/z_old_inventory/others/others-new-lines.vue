@@ -75,7 +75,7 @@
 			const app = this;
 			const search = {text: app.recordList[index].Title, field: "Title", filter:{Code:"other"}, limit: 20, skip: 0};
 			HTTP.post(url, search,{withCredentials: true}).then((response) => {
-				if (response.data.Body !== null) {
+				if (response.data.Body !== null && response.data.Body !== undefined ) {
 					app.recordList[index].itemList = response.data.Body
 				}
 			}).catch((e) => { console.log(e) })

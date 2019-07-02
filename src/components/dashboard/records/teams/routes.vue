@@ -4,17 +4,17 @@
 
 <script type="text/javascript">
 
-  import clubsNew from "@/components/dashboard/records/clubs/clubs-new"
-  import clubsView from "@/components/dashboard/records/clubs/clubs-view"
-  import clubsEdit from "@/components/dashboard/records/clubs/clubs-edit"
-  import clubsSearch from "@/components/dashboard/records/clubs/clubs-search"
+  import teamsNew from "@/components/dashboard/records/teams/teams-new"
+  import teamsView from "@/components/dashboard/records/teams/teams-view"
+  import teamsEdit from "@/components/dashboard/records/teams/teams-edit"
+  import teamsSearch from "@/components/dashboard/records/teams/teams-search"
 
   export default {
     children: [
-      { path: '', component: clubsSearch, name:"clubs-search"},
-      { path: 'new', component: clubsNew, name:"clubs-new"},
-      { path: ':id', component: clubsView, name:"clubs-view"},
-      { path: ':id/edit', component: clubsEdit, name:"clubs-edit"},
+      { path: '', component: teamsSearch, name:"teams-search"},
+      { path: 'new', component: teamsNew, name:"teams-new"},
+      { path: ':id', component: teamsView, name:"teams-view"},
+      { path: ':id/edit', component: teamsEdit, name:"teams-edit"},
     ],
   }
 </script>

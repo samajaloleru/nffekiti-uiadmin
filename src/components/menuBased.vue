@@ -17,27 +17,26 @@
       
     
       
-      <div class="cf">
-        <div class="fl h3 w-100"></div>
-        <menulist class="top-0 left-0 vh-100 z-max fixed absolute relative-l dn db-l" :class="{'slideInLeft':lShow, 'slideOutLeft':!lShow}">
-          
-          <template slot="default">
-            <li class="pointer"  @click="toggleMenu">    
-                <div class="ph2 w-100 center cf f6 f5-ns inline-flex items-center fw5 h3 bg-white fixed dn-l red">
-                    <i class="fas fa-times-circle"></i>
-                    <span class=" pl2 f5 f6-ns">
-                        Ekiti State Football Association
-                    </span>
-                </div>
-            </li>
-            <li class="h3 fl w-100 dn-l"> </li>
-          </template>
-        </menulist>
-        
-        <div class="min-vh-100 white w-100 w-80-l fl center bg-white br2 relative ">
-          <router-view></router-view>
+        <div class="cf">
+            <menulist class="top-0 left-0 vh-100 z-9999-l z-max fixed absolute relative-l dn db-l" :class="{'slideInLeft':lShow, 'slideOutLeft':!lShow}"> 
+            <template slot="default">
+                <li class="pointer z-max"  @click="toggleMenu">    
+                    <div class="ph2 w-100 center cf f6 f5-ns inline-flex items-center fw5 h3 bg-white fixed dn-l red">
+                        <i class="fas fa-times-circle"></i>
+                        <span class=" pl2 f5 f6-ns">
+                            Ekiti State Football Association
+                        </span>
+                    </div>
+                </li>
+                <li class="h3 fl w-100 dn-l"> </li>
+            </template>
+            </menulist>
+            
+            <div class="min-vh-100 white w-100 w-80-l fl center bg-white br2 relative ">
+                <div class="cf-l h3 w-100"></div>
+                <router-view></router-view>
+            </div>
         </div>
-      </div>
     </div>
   </section>
 </template>

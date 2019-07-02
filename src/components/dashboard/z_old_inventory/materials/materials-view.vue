@@ -87,7 +87,7 @@
 
       </div>
       <div v-else>
-        <h1 class="black f6 tc ma5">Please Wait, Searching...</h1>
+        <h1 class="black f6 tc ma2">Please Wait, Searching...</h1>
       </div>
     
 

@@ -1,5 +1,6 @@
 <template>
     <div class="w-80 w-40-m w-20-l fl-l">
+        <div class="cf h3 w-100 dn db-l"></div>
         <nav class="vh-100 overflow-y-auto w-100 w-20-l fixed">
             <ul class="list pt0 ph0 mt0">
                 <slot></slot>
@@ -44,8 +45,6 @@
                 </li>
             </ul>
         </nav>
-        
-        <div class="menulist"></div>
     </div>
 </template>
 <script type="text/javascript">

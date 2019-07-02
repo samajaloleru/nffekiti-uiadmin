@@ -4,10 +4,10 @@
 
 <script type="text/javascript">
 
-  import playersNew from "@/components/dashboard/profiles/players/players-new"
-  import playersView from "@/components/dashboard/profiles/players/players-view"
-  import playersEdit from "@/components/dashboard/profiles/players/players-edit"
-  import playersSearch from "@/components/dashboard/profiles/players/players-search"
+  import playersNew from "@/components/dashboard/records/players/players-new"
+  import playersView from "@/components/dashboard/records/players/players-view"
+  import playersEdit from "@/components/dashboard/records/players/players-edit"
+  import playersSearch from "@/components/dashboard/records/players/players-search"
 
   export default {
     children: [

@@ -167,7 +167,7 @@
 					this.notifications.push(response.data)
 					setTimeout(checkRedirect(response.data),1500)
 
-					if(response.data.Body !== null){
+					if(response.data.Body !== null && response.data.Body !== undefined ){
 						setTimeout(function(){
 							app.$router.push({name:"users-view",params:{id:response.data.Body}})
 						},1000)

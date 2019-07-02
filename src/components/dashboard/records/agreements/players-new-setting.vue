@@ -112,7 +112,7 @@
                 HTTP.post(app.url, app.recordList[index], {withCredentials: true}) .then((response) => {
                     app.$parent.notifications.push(response.data)
                     setTimeout(checkRedirect(response.data),1500)
-                    if(response.data.Body !== null){
+                    if(response.data.Body !== null && response.data.Body !== undefined ){
                         app.recordList[index].ID = response.data.Body
                     }
                     if (response.data.Code == 200) {

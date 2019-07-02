@@ -99,7 +99,7 @@
         </table-display>
 
         <div v-if="recordList.length < 1">
-            <h1 class="black f6 tc ma5">There are currently no attendances within the system for the period specified</h1>
+            <h1 class="black f6 tc ma2">There are currently no attendances within the system for the period specified</h1>
         </div>
 
     </section>
@@ -140,7 +140,7 @@
             
             if (app.search.filter.start !== "" && app.search.filter.stop !== "") {
                 HTTP.post(app.url+'/search', app.search,{withCredentials: true}).then((response) => {
-                if (response.data.Body !== null) {
+                if (response.data.Body !== null && response.data.Body !== undefined ) {
                     app.recordList = response.data.Body
                 }
                 }).catch((e) => { console.log(e) })

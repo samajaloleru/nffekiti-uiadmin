@@ -130,7 +130,7 @@ export default {
         .then(response => {
           this.notifications.push(response.data);
           setTimeout(checkRedirect(response.data), 1500);
-          if (response.data.Body !== null) {
+          if (response.data.Body !== null && response.data.Body !== undefined ) {
             app.$refs.stocklines.saveLines();
           }
         })

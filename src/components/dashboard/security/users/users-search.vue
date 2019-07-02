@@ -19,56 +19,57 @@
             </div>
         </div>
 
-        <div class="w-100 fl h3"></div>
-
-        <div class="pv2 fl w-100">
-            <table-display>
-                <template slot="tableHead">
-                    <tr class="tl bg-near-lack black f7">
-                        <td class="tc bg-near-black">
-                            <i @click="searchRecords" class="fas near-white fa-search"></i>
-                        </td>
-                        <td class="">
-                            <input type="text" v-model="search.filter.username" placeholder="Username" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
-                        </td>
-                        <td class="">
-                            <input type="text" v-model="search.filter.email" placeholder="Email" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
-                        </td>
-                        <td class="">
-                            <input type="text" v-model="search.filter.profile" placeholder="Profile" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
-                        </td>
-                        <td class="">
-                            <input type="text" v-model="search.filter.workflow" placeholder="Status" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
-                        </td>
-                    </tr>
-                    <tr class="tl bg-gray white">
-                        <td class=""></td>
-                        <td class="pa2">Username</td>
-                        <td class="pa2">Email</td>
-                        <td class="pa2">Profile</td>
-                        <td class="pa2">Status</td>
-                    </tr>
-                </template>
-                <template slot="tableBody" v-if="recordList.length > 0">
-                    <tr class="stripe-dark" v-for="(user, index) in recordList" :key="index">
-                        <td class="tc">
-                            <router-link class="mid-gray hover-green" :to="{name:'users-view',params:{id:user.ID}}">
-                                <i class="fas fa-circle"></i>
-                            </router-link>
-                        </td>
-                        <td class=" pa2"> 
-                            <span class="f7">#{{(index+1)+(search.skip*search.limit)}}.</span> {{user.Username}}
-                        </td>
-                        <td class=" pa2">{{user.Email}}</td>
-                        <td class=" pa2">{{user.Profile}}</td>
-                        <td class=" pa2">{{user.Workflow}}</td>
-                        
-                    </tr>
-                </template>
-            </table-display>
-
+        
+        <div class="cf h2 w-100 db dn-ns"></div>
+        <div class="pv2 mt4 dib w-100">
+            <div class="overflow-auto">
+                <table-display>
+                    <template slot="tableHead">
+                        <tr class="tl bg-near-lack black f7">
+                            <td class="tc bg-near-black">
+                                <i @click="searchRecords" class="fas near-white fa-search"></i>
+                            </td>
+                            <td class="">
+                                <input type="text" v-model="search.filter.username" placeholder="Username" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
+                            </td>
+                            <td class="">
+                                <input type="text" v-model="search.filter.email" placeholder="Email" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
+                            </td>
+                            <td class="">
+                                <input type="text" v-model="search.filter.profile" placeholder="Profile" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
+                            </td>
+                            <td class="">
+                                <input type="text" v-model="search.filter.workflow" placeholder="Status" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
+                            </td>
+                        </tr>
+                        <tr class="tl bg-gray white">
+                            <td class=""></td>
+                            <td class="pa2">Username</td>
+                            <td class="pa2">Email</td>
+                            <td class="pa2">Profile</td>
+                            <td class="pa2">Status</td>
+                        </tr>
+                    </template>
+                    <template slot="tableBody" v-if="recordList.length > 0">
+                        <tr class="stripe-dark" v-for="(user, index) in recordList" :key="index">
+                            <td class="tc">
+                                <router-link class="mid-gray hover-green" :to="{name:'users-view',params:{id:user.ID}}">
+                                    <i class="fas fa-circle"></i>
+                                </router-link>
+                            </td>
+                            <td class=" pa2"> 
+                                <span class="f7">#{{(index+1)+(search.skip*search.limit)}}.</span> {{user.Username}}
+                            </td>
+                            <td class=" pa2">{{user.Email}}</td>
+                            <td class=" pa2">{{user.Profile}}</td>
+                            <td class=" pa2">{{user.Workflow}}</td>
+                            
+                        </tr>
+                    </template>
+                </table-display>
+            </div>
             <div v-if="recordList.length < 1">
-                <h1 class="black f6 tc ma5">There are currently no users record </h1>
+                <h1 class="black f6 tc ma2">There are currently no users record </h1>
             </div>
         </div>
         
@@ -91,7 +92,7 @@
 				const app = this 
 				app.isSearch = true
 				HTTP.post(app.url+'/search', app.search,{withCredentials: true}).then((response) => {
-					if (response.data.Body !== null ) {
+					if (response.data.Body !== null && response.data.Body !== undefined ) {
 						app.recordList = response.data.Body
 					}
 				}).catch((e) => { console.log(e) })

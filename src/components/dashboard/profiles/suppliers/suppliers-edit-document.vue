@@ -71,7 +71,7 @@
 			this.recordList = []
 			app.search.skip = app.search.page-1;
 			HTTP.post(app.url+'/search', app.search,{withCredentials: true}).then((response) => {
-				if (response.data.Body !== null ) {
+				if (response.data.Body !== null && response.data.Body !== undefined ) {
 					app.recordList = response.data.Body
 				} else { app.addEmployer(); }
 			}).catch((e) => { console.log(e) })

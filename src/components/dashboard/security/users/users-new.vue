@@ -153,7 +153,7 @@
           setTimeout(checkRedirect(response.data),1500)
 
           app.isSave = true;
-          if(response.data.Body !== null){
+          if(response.data.Body !== null && response.data.Body !== undefined ){
             app.record = {Image:""}
           }
         }).catch((e) => {

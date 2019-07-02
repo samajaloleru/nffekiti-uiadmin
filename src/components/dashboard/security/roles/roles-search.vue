@@ -18,50 +18,50 @@
       </div>
     </div>
 
-    
+    <div class="cf h2 w-100 db dn-ns"></div>
     <div class="pv2 mt4 dib w-100">
-      <table-display>
-        <template slot="tableHead">
-          <tr class="tl bg-near-lack black f7">
-            <td class="tc bg-near-black">
-              <i @click="searchRecords" class="fas near-white fa-search"></i>
-            </td>
-            <td class="">
-              <input type="text" v-model="search.filter.title" placeholder="Title" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
-            </td>
-            <td class="">
-              <input type="text" v-model="search.filter.status" placeholder="Status" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
-            </td>
-            <td class="">
-              <input type="text" v-model="search.filter.description" placeholder="Description" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
-            </td>
-          </tr>
-          <tr class="tl bg-gray white">
-            <td class=""></td>
-            <td class="pa2">Title</td>
-            <td class="pa2">Status</td>
-            <td class="pa2">Description</td>
-          </tr>
-        </template>
-        <template slot="tableBody" v-if="recordList.length > 0">
-          <tr class="stripe-dark" v-for="(role, index) in recordList" :key="index">
-            <td class="tc">
-              <router-link class="mid-gray hover-green" :to="{name:'roles-view',params:{id:role.ID}}">
-                <i class="fas fa-circle"></i>
-              </router-link>
-            </td>
-            <td class=" pa2"> 
-              <span class="f7">#{{(index+1)+(search.skip*search.limit)}}.</span> {{role.Title}}
-            </td>
-            <td class=" pa2">{{role.Workflow}}</td>
-            <td class=" pa2">{{role.Description}}</td>  
-          </tr>
-        </template>
-      </table-display>
+        <table-display>
+            <template slot="tableHead">
+            <tr class="tl bg-near-lack black f7">
+                <td class="tc bg-near-black">
+                <i @click="searchRecords" class="fas near-white fa-search"></i>
+                </td>
+                <td class="">
+                <input type="text" v-model="search.filter.title" placeholder="Title" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
+                </td>
+                <td class="">
+                <input type="text" v-model="search.filter.status" placeholder="Status" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
+                </td>
+                <td class="">
+                <input type="text" v-model="search.filter.description" placeholder="Description" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
+                </td>
+            </tr>
+            <tr class="tl bg-gray white">
+                <td class=""></td>
+                <td class="pa2">Title</td>
+                <td class="pa2">Status</td>
+                <td class="pa2">Description</td>
+            </tr>
+            </template>
+            <template slot="tableBody" v-if="recordList.length > 0">
+            <tr class="stripe-dark" v-for="(role, index) in recordList" :key="index">
+                <td class="tc">
+                <router-link class="mid-gray hover-green" :to="{name:'roles-view',params:{id:role.ID}}">
+                    <i class="fas fa-circle"></i>
+                </router-link>
+                </td>
+                <td class=" pa2"> 
+                <span class="f7">#{{(index+1)+(search.skip*search.limit)}}.</span> {{role.Title}}
+                </td>
+                <td class=" pa2">{{role.Workflow}}</td>
+                <td class=" pa2">{{role.Description}}</td>  
+            </tr>
+            </template>
+        </table-display>
 
-      <div v-if="recordList.length < 1">
-        <h1 class="black f6 tc ma5">There are currently no record </h1>
-      </div>
+        <div v-if="recordList.length < 1">
+            <h1 class="black f6 tc ma2">There are currently no records </h1>
+        </div>
     </div>      
   </section>
 </template>
@@ -81,7 +81,7 @@
         const app = this 
         app.isSearch = true
         HTTP.post(app.url+'/search', app.search,{withCredentials: true}).then((response) => {
-          if (response.data.Body !== null ) {
+          if (response.data.Body !== null && response.data.Body !== undefined ) {
             app.recordList = response.data.Body
           }
         }).catch((e) => { console.log(e) })
