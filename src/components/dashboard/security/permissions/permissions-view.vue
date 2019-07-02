@@ -19,66 +19,68 @@
         <notify class="mv2" :notifications="notifications"></notify>
 
         <div v-if="isFound" class="pa2 bg-washed-yellow br1 cf">
-          <div class="mt3 pa2 dib">
-            <label class="db fw4 lh-copy f7 black">Workflow </label>
-            <div class="pa2 ba b--silver br2 bg-white w-100 ">{{record.Workflow}}&nbsp;</div>
-          </div>
-
-          <div class="mt3 pa2 dib">
-            <label class="db fw4 lh-copy f7 black"> Method </label>
-            <div class="pa2 ba b--silver br2 bg-white w-100 ">{{record.Method}}&nbsp;</div>
-          </div>
-
-          <div class="fl w-100">
-            <div class="fl pa2 mt3 mt0-ns w-100 w-30-l">
-              <label class="db fw4 lh-copy f6 black"> Title</label>
-              <div class="pa2 ba b--silver br2 bg-white w-100 ">{{record.Title}}&nbsp;</div>
+          <div class="ph3 w-100 cf">
+            <div class="mt3 pa2 dib">
+              <label class="db fw4 lh-copy f7 black">Status </label>
+              <div class="pa2 ba b--silver br2 black  bg-white w-100 ">{{record.Workflow}}&nbsp;</div>
             </div>
 
-            <div class="fl pa2 mt3 mt0-ns w-100 w-50-m w-20-l">
-              <label class="db fw4 lh-copy f6 black"> Action</label>
-              <div class="pa2 ba b--silver br2 bg-white w-100 ">{{record.Action}}&nbsp;</div>
+            <div class="mt3 pa2 dib">
+              <label class="db fw4 lh-copy f7 black"> Method </label>
+              <div class="pa2 ba b--silver br2 black bg-white w-100 ">{{record.Method}}&nbsp;</div>
             </div>
 
-            <div class="fl pa2 mt3 mt0-ns w-100 w-50-m w-50-l">
-              <label class="db fw4 lh-copy f6 black"> Url Code</label>
-              <div class="pa2 ba b--silver br2 bg-white w-100 ">{{record.Code}}&nbsp;</div>
+            <div class="fl w-100">
+              <div class="fl pa2 mt3 mt0-ns w-100 w-30-l">
+                <label class="db fw4 lh-copy f6 black"> Title</label>
+                <div class="pa2 ba b--silver br2 black bg-white w-100 ">{{record.Title}}&nbsp;</div>
+              </div>
+
+              <div class="fl pa2 mt3 mt0-ns w-100 w-50-m w-20-l">
+                <label class="db fw4 lh-copy f6 black"> Action</label>
+                <div class="pa2 ba b--silver br2 black bg-white w-100 ">{{record.Action}}&nbsp;</div>
+              </div>
+
+              <div class="fl pa2 mt3 mt0-ns w-100 w-50-m w-50-l">
+                <label class="db fw4 lh-copy f6 black"> Url Code</label>
+                <div class="pa2 ba b--silver br2 black bg-white w-100 ">{{record.Code}}&nbsp;</div>
+              </div>
             </div>
-          </div>
 
-          <div class="fl w-100">
-            <div class="fl pa2 mt3 mt0-ns w-100">
-              <label class="db fw4 lh-copy f6 black"> Description</label>
-              <div class="pa2 ba b--silver br2 bg-white w-100 ">{{record.Description}}&nbsp;</div>
+            <div class="fl w-100">
+              <div class="fl pa2 mt3 mt0-ns w-100">
+                <label class="db fw4 lh-copy f6 black"> Description</label>
+                <div class="pa2 ba b--silver br2 black bg-white w-100 ">{{record.Description}}&nbsp;</div>
+              </div>
             </div>
-          </div>
 
-          <div class="fl w-100 w-50-ns pa2 ">
-            <div class="fl pv2 w-100"></div>
-            <label class="fw4 lh-copy f6 black">Permission applies to {{userPermissionList.length}} User(s):</label>
-            <label class=" fw4 lh-copy f7 red fr" @click="userPermissionList=[]">- clear</label>
-            <ul class="h5 w-100 tl ma0 ba b--silver br2 bg-white overflow-y-scroll f6 list mb3">
-              <li class="pa2 black bt b--near-white" v-for="(user, index) in userPermissionList" :key="index">
-                <span class="f7">#{{index+1}}</span> {{user.Username}} - {{user.Email}}
-              </li>
-            </ul>
-          </div>
+            <div class="fl w-100 w-50-ns pa2 ">
+              <div class="fl pv2 w-100"></div>
+              <label class="fw4 lh-copy f6 black">Permission applies to {{userPermissionList.length}} User(s):</label>
+              <label class=" fw4 lh-copy f7 red fr" @click="userPermissionList=[]">- clear</label>
+              <ul class="h3 w-100 tl ma0 ba b--silver br2 black bg-white overflow-y-scroll f6 list mb3">
+                <li class="pa2 black bt b--near-white" v-for="(user, index) in userPermissionList" :key="index">
+                  <span class="f7">#{{index+1}}</span> {{user.Username}} - {{user.Email}}
+                </li>
+              </ul>
+            </div>
 
-          <div class="fl w-100 w-50-ns pa2 ">
-            <div class="fl pv2 w-100"></div>
-            <label class="fw4 lh-copy f6 black">Permission applies to {{rolePermissionList.length}} Role(s):</label>
-            <label class=" fw4 lh-copy f7 red fr" @click="rolePermissionList=[]">- clear</label>
-            <ul class="h5 w-100 tl ma0 ba b--silver br2 bg-white overflow-y-scroll f6 list mb3">
-              <li class="pa2 black bt b--near-white" v-for="(role, index) in rolePermissionList" :key="index">
-                <span class="f7">#{{index+1}}</span> {{role.Title}}
-              </li>
-            </ul>
-          </div>
+            <div class="fl w-100 w-50-ns pa2 ">
+              <div class="fl pv2 w-100"></div>
+              <label class="fw4 lh-copy f6 black">Permission applies to {{rolePermissionList.length}} Role(s):</label>
+              <label class=" fw4 lh-copy f7 red fr" @click="rolePermissionList=[]">- clear</label>
+              <ul class="h3 w-100 tl ma0 ba b--silver br2 black bg-white overflow-y-scroll f6 list mb3">
+                <li class="pa2 black bt b--near-white" v-for="(role, index) in rolePermissionList" :key="index">
+                  <span class="f7">#{{index+1}}</span> {{role.Title}}
+                </li>
+              </ul>
+            </div>
 
-          <div class="fl w-100 mt3">
-            <router-link :to="{name:'permissions-edit',params:{id:record.ID}}" class="fr ph3 pv2 br1 bg-near-black near-white grow-ns pointer f6 tc no-underline" >
-              <i class="fas fa-edit"></i> Edit
-            </router-link>
+            <div class="fl w-100 mv3">
+              <router-link :to="{name:'permissions-edit',params:{id:record.ID}}" class="fr ph3 pv2 br1 bg-near-black near-white grow-ns pointer f6 tc no-underline" >
+                <i class="fas fa-edit"></i> Edit
+              </router-link>
+            </div>
           </div>
         </div>
         <div v-else>
@@ -110,9 +112,9 @@
     methods: {
       getRecord (id) {
         const app = this;
-        HTTP.get(this.url+'?id='+id, {withCredentials: true}).then((response) => {
-          this.record = response.data.Body
-          this.notifications.push(response.data)
+        HTTP.get(app.url+'?id='+id, {withCredentials: true}).then((response) => {
+          app.record = response.data.Body
+          app.notifications.push(response.data)
           setTimeout(checkRedirect(response.data),1500)
           if(response.data.Body.ID == id){
             app.isFound = true

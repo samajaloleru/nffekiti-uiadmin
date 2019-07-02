@@ -18,9 +18,8 @@
       </div>
     </div>
 
-    <div class="w-100 fl h3"></div>
-
-    <div class="pv2 fl w-100">
+    
+    <div class="pv2 mt4 dib w-100">
       <table-display>
         <template slot="tableHead">
           <tr class="tl bg-near-lack black f7">
@@ -45,23 +44,23 @@
           </tr>
         </template>
         <template slot="tableBody" v-if="recordList.length > 0">
-          <tr class="stripe-dark" v-for="(user, index) in recordList" :key="index">
+          <tr class="stripe-dark" v-for="(role, index) in recordList" :key="index">
             <td class="tc">
-              <router-link class="mid-gray hover-green" :to="{name:'users-view',params:{id:user.ID}}">
+              <router-link class="mid-gray hover-green" :to="{name:'roles-view',params:{id:role.ID}}">
                 <i class="fas fa-circle"></i>
               </router-link>
             </td>
             <td class=" pa2"> 
-              <span class="f7">#{{(index+1)+(search.skip*search.limit)}}.</span> {{user.Title}}
+              <span class="f7">#{{(index+1)+(search.skip*search.limit)}}.</span> {{role.Title}}
             </td>
-            <td class=" pa2">{{user.Status}}</td>
-            <td class=" pa2">{{user.Description}}</td>  
+            <td class=" pa2">{{role.Workflow}}</td>
+            <td class=" pa2">{{role.Description}}</td>  
           </tr>
         </template>
       </table-display>
 
       <div v-if="recordList.length < 1">
-        <h1 class="black f6 tc ma5">There are currently no users record </h1>
+        <h1 class="black f6 tc ma5">There are currently no record </h1>
       </div>
     </div>      
   </section>

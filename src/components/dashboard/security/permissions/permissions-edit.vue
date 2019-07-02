@@ -19,98 +19,100 @@
         <notify class="mv2" :notifications="notifications"></notify>
 
         <div v-if="isFound" class="pa2 bg-washed-yellow br1 cf">
-          <div class="mt3 pa2 dib">
-            <label class="db fw4 lh-copy f7 black">Select Status </label>
-            <select class="pa1 ba b--silver br2 bg-white  " v-model="record.Workflow">
-              <option></option>
-              <option>enabled</option>
-              <option>disabled</option>
-            </select>
-          </div>
-
-          <div class="mt3 pa2 dib">
-            <label class="db fw4 lh-copy f7 black"> Method </label>
-            <select class="pa1 ba b--silver br2 bg-white  " v-model="record.Method">
-              <option></option>
-              <option>get</option>
-              <option>post</option>
-            </select>
-          </div>
-      
-          <div class="fl w-100">
-            <div class="fl pa2 mt3 mt0-ns w-100 w-30-l">
-              <label class="db fw4 lh-copy f6 black"> Title</label>
-              <input class="pa2 ba b--silver br2 bg-white w-100 " type="text" v-model="record.Title">
+          <div class="ph3 w-100 cf">
+            <div class="mt3 pa2 dib">
+              <label class="db fw4 lh-copy f7 black">Select Status </label>
+              <select class="pa1 ba b--silver br2 bg-white  " v-model="record.Workflow">
+                <option></option>
+                <option>enabled</option>
+                <option>disabled</option>
+              </select>
             </div>
 
-            <div class="fl pa2 mt3 mt0-ns w-100 w-50-m w-20-l">
-              <label class="db fw4 lh-copy f6 black"> Action</label>
-              <input class="pa2 ba b--silver br2 bg-white w-100 " type="text" v-model="record.Action">
+            <div class="mt3 pa2 dib">
+              <label class="db fw4 lh-copy f7 black"> Method </label>
+              <select class="pa1 ba b--silver br2 bg-white  " v-model="record.Method">
+                <option></option>
+                <option>get</option>
+                <option>post</option>
+              </select>
+            </div>
+        
+            <div class="fl w-100">
+              <div class="fl pa2 mt3 mt0-ns w-100 w-30-l">
+                <label class="db fw4 lh-copy f6 black"> Title</label>
+                <input class="pa2 ba b--silver br2 bg-white w-100 " type="text" v-model="record.Title">
+              </div>
+
+              <div class="fl pa2 mt3 mt0-ns w-100 w-50-m w-20-l">
+                <label class="db fw4 lh-copy f6 black"> Action</label>
+                <input class="pa2 ba b--silver br2 bg-white w-100 " type="text" v-model="record.Action">
+              </div>
+
+              <div class="fl pa2 mt3 mt0-ns w-100 w-50-m w-50-l">
+                <label class="db fw4 lh-copy f6 black"> Url Code</label>
+                <input class="pa2 ba b--silver br2 bg-white w-100 " type="text" v-model="record.Code">
+              </div>
             </div>
 
-            <div class="fl pa2 mt3 mt0-ns w-100 w-50-m w-50-l">
-              <label class="db fw4 lh-copy f6 black"> Url Code</label>
-              <input class="pa2 ba b--silver br2 bg-white w-100 " type="text" v-model="record.Code">
+            <div class="fl w-100">
+              <div class="fl pa2 mt3 mt0-ns w-100">
+                <label class="db fw4 lh-copy f6 black"> Description</label>
+                <input class="pa2 ba b--silver br2 bg-white w-100 " type="text" v-model="record.Description">
+              </div>
             </div>
-          </div>
 
-          <div class="fl w-100">
-            <div class="fl pa2 mt3 mt0-ns w-100">
-              <label class="db fw4 lh-copy f6 black"> Description</label>
-              <input class="pa2 ba b--silver br2 bg-white w-100 " type="text" v-model="record.Description">
+            <div class="fl w-100 w-50-ns pa2 ">
+              <label class=" fw4 lh-copy f6 black">Add User to Permission</label>
+              <label class=" fw4 lh-copy f7 red fr" @click="userList=[],record.User='',record.UserID=0">- clear</label>
+              <input class="pa2 ba b--silver br2 bg-white w-100 " @keyup="searchUser" type="text" v-model="record.User">
+              <div class="relative w-100">
+                <small>
+                  <ul class="bg-white absolute w-100 pa0 br2 br--bottom mt0 list overflow-auto" style="max-height:8em">
+                    <li class="pa2 black bt b--near-white" @click="record.UserID = user.ID, record.User=user.Fullname, userList = []" v-for="(user, index) in userList" :key="index">
+                      <span class="f7">#{{index+1}}</span> {{user.Username}}
+                    </li>
+                  </ul>
+                </small>
+              </div>
+              <div class="fl pv2 w-100"></div>
+              <label class="fw4 lh-copy f6 black">Permission applies to {{userPermissionList.length}} User(s):</label>
+              <label class=" fw4 lh-copy f7 red fr" @click="userPermissionList=[]">- clear</label>
+              <ul class="h3 w-100 tl ma0 ba b--silver br2 bg-white overflow-y-scroll f6 list mb3">
+                <li class="pa2 black bt b--near-white" v-for="(user, index) in userPermissionList" :key="index">
+                  <span class="f7">#{{index+1}}</span> {{user.Username}} - {{user.Email}}
+                </li>
+              </ul>
             </div>
-          </div>
 
-          <div class="fl w-100 w-50-ns pa2 ">
-            <label class=" fw4 lh-copy f6 black">Add User to Permission</label>
-            <label class=" fw4 lh-copy f7 red fr" @click="userList=[],record.User='',record.UserID=0">- clear</label>
-            <input class="pa2 ba b--silver br2 bg-white w-100 " @keyup="searchUser" type="text" v-model="record.User">
-            <div class="relative w-100">
-              <small>
-                <ul class="bg-white absolute w-100 pa0 br2 br--bottom mt0 list overflow-auto" style="max-height:8em">
-                  <li class="pa2 black bt b--near-white" @click="record.UserID = user.ID, record.User=user.Fullname, userList = []" v-for="(user, index) in userList" :key="index">
-                    <span class="f7">#{{index+1}}</span> {{user.Username}}
-                  </li>
-                </ul>
-              </small>
-            </div>
-            <div class="fl pv2 w-100"></div>
-            <label class="fw4 lh-copy f6 black">Permission applies to {{userPermissionList.length}} User(s):</label>
-            <label class=" fw4 lh-copy f7 red fr" @click="userPermissionList=[]">- clear</label>
-            <ul class="h5 w-100 tl ma0 ba b--silver br2 bg-white overflow-y-scroll f6 list mb3">
-              <li class="pa2 black bt b--near-white" v-for="(user, index) in userPermissionList" :key="index">
-                <span class="f7">#{{index+1}}</span> {{user.Username}} - {{user.Email}}
-              </li>
-            </ul>
-          </div>
+            <div class="fl w-100 w-50-ns pa2 ">
+              <label class=" fw4 lh-copy f6 black">Add Role to Permission</label>
+              <label class=" fw4 lh-copy f7 red fr" @click="userList=[],record.Role='',record.RoleID=0">- clear</label>
+              <input class="pa2 ba b--silver br2 bg-white w-100 " @keyup="searchRole" type="text" v-model="record.Role">
+              <div class="relative w-100">
+                <small>
+                  <ul class="bg-white absolute w-100 pa0 br2 br--bottom mt0 list overflow-auto" style="max-height:8em">
+                    <li class="pa2 black bt b--near-white" @click="record.RoleID = user.ID, record.Role=user.Fullname, userList = []" v-for="(user, index) in userList" :key="index">
+                      <span class="f7">#{{index+1}}</span> {{user.Rolename}}
+                    </li>
+                  </ul>
+                </small>
+              </div>
+              <div class="fl pv2 w-100"></div>
+              <label class="fw4 lh-copy f6 black">Permission applies to {{rolePermissionList.length}} Role(s):</label>
+              <label class=" fw4 lh-copy f7 red fr" @click="rolePermissionList=[]">- clear</label>
+              <ul class="h3 w-100 tl ma0 ba b--silver br2 bg-white overflow-y-scroll f6 list mb3">
+                <li class="pa2 black bt b--near-white" v-for="(role, index) in rolePermissionList" :key="index">
+                  <span class="f7">#{{index+1}}</span> {{role.Title}}
+                </li>
+              </ul>
+            </div>  
+            
 
-          <div class="fl w-100 w-50-ns pa2 ">
-            <label class=" fw4 lh-copy f6 black">Add Role to Permission</label>
-            <label class=" fw4 lh-copy f7 red fr" @click="userList=[],record.Role='',record.RoleID=0">- clear</label>
-            <input class="pa2 ba b--silver br2 bg-white w-100 " @keyup="searchRole" type="text" v-model="record.Role">
-            <div class="relative w-100">
-              <small>
-                <ul class="bg-white absolute w-100 pa0 br2 br--bottom mt0 list overflow-auto" style="max-height:8em">
-                  <li class="pa2 black bt b--near-white" @click="record.RoleID = user.ID, record.Role=user.Fullname, userList = []" v-for="(user, index) in userList" :key="index">
-                    <span class="f7">#{{index+1}}</span> {{user.Rolename}}
-                  </li>
-                </ul>
-              </small>
-            </div>
-            <div class="fl pv2 w-100"></div>
-            <label class="fw4 lh-copy f6 black">Permission applies to {{rolePermissionList.length}} Role(s):</label>
-            <label class=" fw4 lh-copy f7 red fr" @click="rolePermissionList=[]">- clear</label>
-            <ul class="h5 w-100 tl ma0 ba b--silver br2 bg-white overflow-y-scroll f6 list mb3">
-              <li class="pa2 black bt b--near-white" v-for="(role, index) in rolePermissionList" :key="index">
-                <span class="f7">#{{index+1}}</span> {{role.Title}}
-              </li>
-            </ul>
-          </div>  
-          
-
-          <div class="fl w-100 mt3">
-            <div class="fr ph3 pv2 br1 bg-near-black near-white grow-ns pointer f6 tc no-underline"  @click="save" >
-              <i class="fas fa-check"></i> Save
+            <div class="fl w-100 mv3">
+              <div class="fr ph3 pv2 br1 bg-near-black near-white grow-ns pointer f6 tc no-underline"  @click="save" >
+                <i class="fas fa-check"></i> Save
+              </div>
             </div>
           </div>
         </div>

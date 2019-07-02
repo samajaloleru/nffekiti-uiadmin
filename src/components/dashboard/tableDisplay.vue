@@ -1,7 +1,7 @@
 <template id="">
   <section>
-    <div class="overflow-auto">
-      <table class=" w-100 black" style="min-width:900px">
+    <div class="">
+      <table class="fixed w-80 black" style="min-width:900px">
         <thead class="f7">
           <slot name="tableHead" ></slot>
         </thead>

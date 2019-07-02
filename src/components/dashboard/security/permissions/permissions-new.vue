@@ -18,8 +18,8 @@
 
         <notify class="mv2" :notifications="notifications"></notify>
 
-        <div class="pa2 bg-washed-yellow br2 cf">
-          <div class="mt3 pa2 dib">
+      <div class="pa2 bg-washed-yellow br2 cf">
+        <div class="mt3 pa2 dib">
           <label class="db fw4 lh-copy f7 black">Select Status </label>
           <select class="pa1 ba b--silver br2 bg-white  " v-model="record.Workflow">
             <option></option>

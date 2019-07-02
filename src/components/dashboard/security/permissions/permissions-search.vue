@@ -17,68 +17,68 @@
           </router-link>
         </div>
       </div>
+    
       
-      <div class="w-100 fl h3"></div>
-      
-      <div class="pv2 fl w-100">
-        <table-display>
-          <template slot="tableHead">
-            <tr class="tl bg-near-lack black f7">
-              <td class="tc bg-near-black">
-                <i @click="searchRecords" class="fas near-white fa-search"></i>
-              </td>
-              <td class="">
-                <input type="text" v-model="search.filter.title" placeholder="Title" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
-              </td>
-              <td class="">
-                <input type="text" v-model="search.filter.status" placeholder="Status" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
-              </td>
-              <td class="">
-                <input type="text" v-model="search.filter.code" placeholder="Url Code" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
-              </td>
-              <td class="">
-                <input type="text" v-model="search.filter.method" placeholder="Method" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
-              </td>
-              <td class="">
-                <input type="text" v-model="search.filter.workflow" placeholder="Action" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
-              </td>
-              <td class="">
-                <input type="text" v-model="search.filter.workflow" placeholder="Description" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
-              </td>
-            </tr>
-            <tr class="tl bg-gray white">
-              <td class=""></td>
-              <td class="pa2">Title</td>
-              <td class="pa2">Status</td>
-              <td class="pa2">Url Code</td>
-              <td class="pa2">Method</td>
-              <td class="pa2">Action</td>
-              <td class="pa2">Description</td>
-            </tr>
-          </template>
-          <template slot="tableBody" v-if="recordList.length > 0">
-            <tr class="stripe-dark" v-for="(user, index) in recordList" :key="index">
-              <td class="tc">
-                <router-link class="mid-gray hover-green" :to="{name:'users-view',params:{id:user.ID}}">
-                  <i class="fas fa-circle"></i>
-                </router-link>
-              </td>
-              <td class=" pa2"> 
-                <span class="f7">#{{(index+1)+(search.skip*search.limit)}}.</span> {{user.Title}}
-              </td>
-              <td class=" pa2">{{user.Status}}</td>
-              <td class=" pa2">{{user.Code}}</td>
-              <td class=" pa2">{{user.Method}}</td>  
-              <td class=" pa2">{{user.Action}}</td>  
-              <td class=" pa2">{{user.Description}}</td>  
-            </tr>
-          </template>
-        </table-display>
-
-        <div v-if="recordList.length < 1">
-          <h1 class="black f6 tc ma5">There are currently no users record </h1>
+      <div class="pv2 mt4 dib w-100">
+        <div class="overflow-auto">
+          <table-display>
+            <template slot="tableHead">
+              <tr class="tl bg-near-lack black f7">
+                <td class=" tc bg-near-black">
+                  <i @click="searchRecords" class="fas near-white fa-search"></i>
+                </td>
+                <td class="">
+                  <input type="text" v-model="search.filter.title" placeholder="Title" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
+                </td>
+                <td class="">
+                  <input type="text" v-model="search.filter.status" placeholder="Status" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
+                </td>
+                <td class="">
+                  <input type="text" v-model="search.filter.code" placeholder="Url Code" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
+                </td>
+                <td class="">
+                  <input type="text" v-model="search.filter.method" placeholder="Method" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
+                </td>
+                <td class="">
+                  <input type="text" v-model="search.filter.workflow" placeholder="Action" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
+                </td>
+                <td class="">
+                  <input type="text" v-model="search.filter.workflow" placeholder="Description" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
+                </td>
+              </tr>
+              <tr class="tl bg-gray white">
+                <td class=""></td>
+                <td class="pa2">Title</td>
+                <td class="pa2">Status</td>
+                <td class="pa2">Url Code</td>
+                <td class="pa2">Method</td>
+                <td class="pa2">Action</td>
+                <td class="pa2">Description</td>
+              </tr>
+            </template>
+            <template slot="tableBody" v-if="recordList.length > 0">
+              <tr class="stripe-dark" v-for="(permission, index) in recordList" :key="index">
+                <td classrole="tc">
+                  <router-link class="mid-gray hover-green" :to="{name:'permissions-view',params:{id:permission.ID}}">
+                    <i class="fas fa-circle"></i>
+                  </router-link>
+                </td>
+                <td class=" pa2"> 
+                  <span class="f7">#{{(index+1)+(search.skip*search.limit)}}.</span> {{permission.Title}}
+                </td>
+                <td class=" pa2">{{permission.Workflow}}</td>
+                <td class=" pa2">{{permission.Code}}</td>
+                <td class=" pa2">{{permission.Method}}</td>  
+                <td class=" pa2">{{permission.Action}}</td>  
+                <td class=" pa2">{{permission.Description}}</td>  
+              </tr>
+            </template>
+          </table-display>
         </div>
-    </div>
+        <div v-if="recordList.length < 1">
+          <h1 class="black f6 tc ma5">There are currently no record </h1>
+        </div>
+      </div>
       
     </section>
 </template>

@@ -19,36 +19,38 @@
         <notify class="mv2" :notifications="notifications"></notify>
 
         <div v-if="isFound" class="pa2 bg-washed-yellow br1 cf">
-          <div class="mt3 pa2 dib">
-            <label class="db fw4 lh-copy f7 black">Workflow </label>
-            <div class="pa2 ba b--silver br2 bg-white w-100 ">{{record.Workflow}}&nbsp;</div>
-          </div>
-            
-          <div class="fl w-100">
-            <div class="fl pa2 mt3 mt0-ns w-100 w-50-ns">
-              <label class="db fw4 lh-copy f6 black"> Title</label>
-              <div class="pa2 ba b--silver br2 bg-white w-100 ">{{record.Title}}&nbsp;</div>
+          <div class="ph3  cf">
+            <div class="mt3 pa2 dib">
+              <label class="db fw4 lh-copy f7 black">Status </label>
+              <div class="pa2 ba b--silver black br2 bg-white w-100 ">{{record.Workflow}}&nbsp;</div>
+            </div>
+              
+            <div class="fl w-100">
+              <div class="fl pa2 mt3 mt0-ns w-100 w-50-ns">
+                <label class="db fw4 lh-copy f6 black"> Title</label>
+                <div class="pa2 ba b--silver black br2 bg-white w-100 ">{{record.Title}}&nbsp;</div>
+              </div>
+
+              <div class="fl pa2 mt3 mt0-ns w-100 w-50-ns">
+                <label class="db fw4 lh-copy f6 black"> Description</label>
+                <div class="pa2 ba b--silver black br2 bg-white w-100 ">{{record.Description}}&nbsp;</div>
+              </div>
             </div>
 
-            <div class="fl pa2 mt3 mt0-ns w-100 w-50-ns">
-              <label class="db fw4 lh-copy f6 black"> Description</label>
-              <div class="pa2 ba b--silver br2 bg-white w-100 ">{{record.Description}}&nbsp;</div>
+            <div class="fl w-100 pa2 ">
+              <label class="fw4 lh-copy f6 black"> {{roleuserList.length}} User(s):</label>
+              <ul class="h3 w-100 tl ma0 ba b--silver black br2 bg-white overflow-y-scroll f6 list mb3">
+                <li class="pa2 black bt b--near-white" v-for="(roleuser, index) in roleuserList" :key="index">
+                  <span class="f7">#{{index+1}}</span> {{roleuser.Username}} - {{roleuser.Email}}
+                </li>
+              </ul>
             </div>
-          </div>
 
-          <div class="fl w-100 w-50-ns pa2 ">
-            <label class="fw4 lh-copy f6 black"> {{roleuserList.length}} User(s):</label>
-            <ul class="h5 w-100 tl ma0 ba b--silver br2 bg-white overflow-y-scroll f6 list mb3">
-              <li class="pa2 black bt b--near-white" v-for="(roleuser, index) in roleuserList" :key="index">
-                <span class="f7">#{{index+1}}</span> {{roleuser.Username}} - {{roleuser.Email}}
-              </li>
-            </ul>
-          </div>
-
-          <div class="w-100 mt3">
-            <router-link :to="{name:'roles-edit',params:{id:record.ID}}" class="fr ph3 pv2 br1 bg-near-black near-white grow-ns pointer f6 tc no-underline" >
-              <i class="fas fa-edit"></i> Edit
-            </router-link>
+            <div class="w-100 dt pr3 mv3">
+              <router-link :to="{name:'roles-edit',params:{id:record.ID}}" class="fr ph3 pv2 br1 bg-near-black near-white grow-ns pointer f6 tc no-underline" >
+                <i class="fas fa-edit"></i> Edit
+              </router-link>
+            </div>
           </div>
         </div>
         <div v-else>
