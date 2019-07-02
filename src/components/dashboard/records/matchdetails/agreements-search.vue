@@ -2,7 +2,7 @@
     <section>
       <div class="w-100 pa2 bg-green fixed z-999 cf inline-flex-ns items-center-ns relative">
         <div class="fl w-100 pa1 tc tl-ns pb fw5 tracked ttu f7 white ">
-          Records / Clubs / Search
+          Records / Player Agreement / Search
         </div>
 
         <div class="white pa2 br1 tc tr-ns f7 fl w-100 db dib-ns absolute-ns left-0-ns w-80-l">
@@ -28,28 +28,28 @@
                   <i @click="searchRecords" class="fas near-white fa-search"></i>
                 </td>
                 <td class="">
-                  <input type="text" v-model="search.filter.clubname" placeholder="Filter" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
+                  <input type="text" v-model="search.filter.playername" placeholder="Filter" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
                 </td>
                 <td class="">
                   <input type="text" v-model="search.filter.licenseno" placeholder="Filter" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
                 </td>
                 <td class="">
-                  <input type="text" v-model="search.filter.clubno" placeholder="Filter" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
+                  <input type="text" v-model="search.filter.playerno" placeholder="Filter" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
                 </td>
                 <td class="">
                   <input type="text" v-model="search.filter.yearfounded" placeholder="Filter" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
                 </td>
                 <td class="">
-                  <input type="text" v-model="search.filter.league" placeholder="Filter" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
+                  <input type="text" v-model="search.filter.club" placeholder="Filter" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
                 </td>
               </tr>
               <tr class="tl bg-gray white">
                 <td class=""></td>
-                <td class="pa2">Club Name</td>
+                <td class="pa2">Player Name</td>
                 <td class="pa2">License No</td>
-                <td class="pa2">Club ID</td>
+                <td class="pa2">Player ID</td>
                 <td class="pa2">Year Founded</td>
-                <td class="pa2">League</td>
+                <td class="pa2">Club</td>
               </tr>
             </template>
             <template slot="tableBody" v-if="recordList.length > 0">
@@ -60,12 +60,12 @@
                   </router-link>
                 </td>
                 <td class=" pa2"> 
-                  <span class="f7">#{{(index+1)+(search.skip*search.limit)}}.</span> {{club.clubname}}
+                  <span class="f7">#{{(index+1)+(search.skip*search.limit)}}.</span> {{club.playername}}
                 </td>
                 <td class=" pa2">{{club.licenseno}}</td>
-                <td class=" pa2">{{club.clubNo}}</td>  
+                <td class=" pa2">{{club.playerno}}</td>  
                 <td class=" pa2">{{club.yearfounded}}</td>  
-                <td class=" pa2">{{club.league}}</td>  
+                <td class=" pa2">{{club.club}}</td>  
               </tr>
             </template>
           </table-display>

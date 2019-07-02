@@ -8,7 +8,7 @@
     import teamsRoutes from "@/components/dashboard/records/teams/routes.vue"
     // import matchdetailsRoutes from "@/components/dashboard/records/matchdetails/routes.vue"
     import playersRoutes from "@/components/dashboard/records/players/routes.vue"
-    // import playeragreementRoutes from "@/components/dashboard/records/playeragreement/routes.vue"
+    import playeragreementRoutes from "@/components/dashboard/records/agreements/routes.vue"
     
 
     export default {
@@ -33,11 +33,11 @@
                 component: playersRoutes,
                 children: playersRoutes.children
             },
-            // {
-            //     path: 'playeragreement',
-            //     component: playeragreementRoutes,
-            //     children: playeragreementRoutes.children
-            // },
+            {
+                path: 'agreements',
+                component: playeragreementRoutes,
+                children: playeragreementRoutes.children
+            },
         ],
     }
 </script>
