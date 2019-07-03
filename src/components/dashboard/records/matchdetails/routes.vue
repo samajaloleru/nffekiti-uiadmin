@@ -4,17 +4,17 @@
 
 <script type="text/javascript">
 
-  import agreementsNew from "@/components/dashboard/records/agreements/agreements-new"
-  import agreementsView from "@/components/dashboard/records/agreements/agreements-view"
-  import agreementsEdit from "@/components/dashboard/records/agreements/agreements-edit"
-  import agreementsSearch from "@/components/dashboard/records/agreements/agreements-search"
+  import matchdetailsNew from "@/components/dashboard/records/matchdetails/matchdetails-new"
+  import matchdetailsView from "@/components/dashboard/records/matchdetails/matchdetails-view"
+  import matchdetailsEdit from "@/components/dashboard/records/matchdetails/matchdetails-edit"
+  import matchdetailsSearch from "@/components/dashboard/records/matchdetails/matchdetails-search"
 
   export default {
     children: [
-      { path: '', component: agreementsSearch, name:"agreements-search"},
-      { path: 'new', component: agreementsNew, name:"agreements-new"},
-      { path: ':id', component: agreementsView, name:"agreements-view"},
-      { path: ':id/edit', component: agreementsEdit, name:"agreements-edit"},
+      { path: '', component: matchdetailsSearch, name:"matchdetails-search"},
+      { path: 'new', component: matchdetailsNew, name:"matchdetails-new"},
+      { path: ':id', component: matchdetailsView, name:"matchdetails-view"},
+      { path: ':id/edit', component: matchdetailsEdit, name:"matchdetails-edit"},
     ],
   }
 </script>

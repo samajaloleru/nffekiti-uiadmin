@@ -6,7 +6,7 @@
 
     import clubsRoutes from "@/components/dashboard/records/clubs/routes.vue"
     import teamsRoutes from "@/components/dashboard/records/teams/routes.vue"
-    // import matchdetailsRoutes from "@/components/dashboard/records/matchdetails/routes.vue"
+    import matchdetailsRoutes from "@/components/dashboard/records/matchdetails/routes.vue"
     import playersRoutes from "@/components/dashboard/records/players/routes.vue"
     import playeragreementRoutes from "@/components/dashboard/records/agreements/routes.vue"
     
@@ -23,11 +23,11 @@
                 component: teamsRoutes,
                 children: teamsRoutes.children
             },
-            // {
-            //     path: 'matchdetails',
-            //     component: matchdetailsRoutes,
-            //     children: matchdetailsRoutes.children
-            // },
+            {
+                path: 'matchdetails',
+                component: matchdetailsRoutes,
+                children: matchdetailsRoutes.children
+            },
             {
                 path: 'players',
                 component: playersRoutes,
