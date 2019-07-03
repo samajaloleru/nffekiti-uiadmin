@@ -62,13 +62,12 @@
 
         reports: [
             {to:"/admin/reports/clubs",icon:"fa-print-search",title:"Club Report"},
-            {to:"",icon:"fa-print-search",title:"Match Report"},
-            {to:"",icon:"fa-print-search",title:"Player Report"},
-            {to:"",icon:"fa-print-search",title:"League Report"},
+            {to:"/admin/reports/matches",icon:"fa-print-search",title:"Match Report"},
+            {to:"/admin/reports/players",icon:"fa-print-search",title:"Player Report"},
+            {to:"/admin/reports/leagues",icon:"fa-print-search",title:"League Report"},
             {to:"/admin/reports/birthdays",icon:"fa-print-search",title:"Birthday Report"},
-            {to:"",icon:"fa-print-search",title:"Performance Report"},
+            {to:"/admin/reports/performances",icon:"fa-print-search",title:"Performance Report"},
         ],
-
 
         maintenance: [
             {to:"/admin/maintenance/venues",icon:"fa-futbol",title:"Venue Setup"},
