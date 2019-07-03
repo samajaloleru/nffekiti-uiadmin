@@ -3,15 +3,15 @@
 
 .bg-dashboard {
     background: linear-gradient(to right, #141414 0%, rgb(46, 46, 46) 40%, rgb(28, 28, 28) 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
- background-blend-mode: multiply;
-    opacity: 0.95;
+    background-blend-mode: multiply;
+    opacity: 0.7;
 }
 
 .mrCus {
-  margin-right: 0rem;
+    margin-right: 0rem;
 }
 .bg-theme {
-  background-color: #9d3e28;
+    background-color: #9d3e28;
 }
 .intro-preloader {
     margin: 120px auto 0;
@@ -56,23 +56,21 @@
 
 /* login.vue */
 /* VVVVVVVVVV */
-  .logo-login {
-      height: 7em
-  }
+.logo-login {
+    height: 7em
+}
 
-  @media screen and (min-width: 34em) {
-      .logo-login {
-          min-height: 8em
-      }
-  }
+@media screen and (min-width: 34em) {
+    .logo-login {
+        min-height: 8em
+    }
+}
 
-  @media screen and (min-width: 30em) {
-      .w-45-ns {
-          width: 45%
-      }
-
-      
-  }
+@media screen and (min-width: 30em) {
+    .w-45-ns {
+        width: 45%
+    }
+}
 
 
 /* menuFooter.vue */
@@ -299,26 +297,26 @@
 
 
 #app section {
-animation: fadein 2s;
--moz-animation: fadein 2s; /* Firefox */
--webkit-animation: fadein 2s; /* Safari and Chrome */
--o-animation: fadein 2s; /* Opera */
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -o-animation: fadein 2s; /* Opera */
 }
 @keyframes fadein {
-from {opacity:0;}
-to {opacity:1;}
+    from {opacity:0;}
+    to {opacity:1;}
 }
 @-moz-keyframes fadein { /* Firefox */
-from {opacity:0;}
-to {opacity:1;}
+    from {opacity:0;}
+    to {opacity:1;}
 }
 @-webkit-keyframes fadein { /* Safari and Chrome */
-from {opacity:0;}
-to {opacity:1;}
+    from {opacity:0;}
+    to {opacity:1;}
 }
 @-o-keyframes fadein { /* Opera */
-from {opacity:0;}
-to {opacity:1;}
+    from {opacity:0;}
+    to {opacity:1;}
 }
 
 input[type=date], input[type=time],

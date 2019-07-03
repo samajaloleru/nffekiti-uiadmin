@@ -129,7 +129,7 @@
 
           <div class="w-100 mt3">
             <router-link :to="{name:'sales-edit',params:{id:record.ID}}" class="fr ph3 pv2 br1 bg-near-black near-white grow-ns pointer f6 tc no-underline" >
-              <i class="fas fa-edit"></i> Edit
+              <i class="fal fa-edit"></i> Edit
             </router-link>
           </div>
         </div>

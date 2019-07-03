@@ -199,7 +199,7 @@
                 
                     <div class="fl w-100 pa1 tc pv3">
                         <span class="ph3 pv2 br4 bg-green pointer f6 white tc no-underline"  @click="save" >
-                            <i class="fas fa-check"></i> Save
+                            <i class="fal fa-check"></i> Save
                         </span>
                     </div>
                 </div>

@@ -135,7 +135,7 @@
         
         <div class="fl w-100 pa1">
           <div v-if="isSave" class="fr ph3 pv2 br2 bg-green pointer f6 white tc no-underline"  @click="save" >
-           <i class="fas fa-save"></i> Submit
+           <i class="fal fa-save"></i> Submit
           </div>
         </div>
       </div>

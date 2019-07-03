@@ -174,7 +174,7 @@
                 
                 <div class="fl w-100 pa1 tc pt3">
                     <router-link :to="{name:'suppliers-edit',params:{id:record.ID}}" class="ph3 pv2 br4 bg-green grow-ns pointer f6 white tc no-underline" >
-                        <i class="fas fa-edit"></i> Edit
+                        <i class="fal fa-edit"></i> Edit
                     </router-link>
                 </div>
             </div>

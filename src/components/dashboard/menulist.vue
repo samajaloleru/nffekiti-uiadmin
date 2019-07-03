@@ -10,11 +10,11 @@
                         <input class="fl f7 bn pa1 br1 bg-white mid-gray w-100 " type="text" placeholder="Search Menu" @keyup="searchMenu" v-model="searchtext">
                     </div>
                     <div class="fl relative w-100">
-                      <ul class="bg-washed-green absolute w-100 pa0 br2 br--bottom mt0 list " style="max-height:18em">
+                      <ul class="bg-near-white absolute w-100 pa0 br2 br--bottom mt0 list " style="max-height:18em">
                         <li class="" v-for="(menu, index) in menuList" :key="index" @click="$parent.toggleMenu">
                             <span @click="menuList=[], searchtext=''">
-                                <router-link class="link mid-gray w-100 fl pa2 bt b--washed-green f7" :to="menu.to">
-                                    #{{index+1}} <span class="oi mh1" :data-glyph="menu.icon"></span> {{menu.title}}
+                                <router-link class="link mid-gray w-100 fl pa2 bt b--light-gray f7" :to="menu.to">
+                                    #{{index+1}} <i class="mh1 fal" :class="menu.icon"></i> {{menu.title}}
                                 </router-link>
                             </span>
                         </li>
@@ -22,10 +22,10 @@
                   </div>
                 </li>
 
-                <li class="ph2 bg-near-black pointer" >
+                <li class="ph2 bg-mid-gray pointer" >
                     <router-link to="/admin" class="no-underline ">
-                        <p class="h3 f7 inline-flex items-center mv0 light-green ">
-                            <span class="oi mr2" data-glyph="dashboard"></span>
+                        <p class="h3 f7 inline-flex items-center mv0 near-white ">
+                            <i class="mr1 fal fa-home" ></i>
                             Dashboard
                         </p>
                     </router-link>
@@ -36,10 +36,11 @@
                 <menulistgroup title="Maintenance" :submenu="submenu.maintenance"/>
                 <menulistgroup title="System Security" :submenu="submenu.security"/>
 
-                <li class="ph2 bg-near-black dim" >
+                <li class="ph2 bg-mid-gray dim" >
                     <router-link  class="no-underline" to="/">
-                    <p class="h3 f7 inline-flex items-center mv0 light-green ">
-                        <span  class="mr2 fas sign-out-alt"></span> Logout
+                    <p class="h3 f7 inline-flex items-center mv0 near-white ">
+                        <i class="mr1 fal fa-sign-out-alt" ></i>
+                        Logout
                     </p>
                     </router-link>
                 </li>
@@ -52,33 +53,33 @@
     
     const submenu = {
         records: [
-            {to:"/admin/records/teams",icon:"people",title:"Team List"},
-            {to:"/admin/records/clubs",icon:"people",title:"Club Form"},
-            {to:"/admin/records/players",icon:"people",title:"Players License"},
-            {to:"/admin/records/agreements",icon:"people",title:"Player Agreement Form"},
-            {to:"/admin/records/matchdetails",icon:"people",title:"Match Venue & Team Colours"},
+            {to:"/admin/records/teams",icon:"fa-clipboard-list",title:"Team List"},
+            {to:"/admin/records/clubs",icon:"fa-folders",title:"Club Form"},
+            {to:"/admin/records/players",icon:"fa-id-card",title:"Players License"},
+            {to:"/admin/records/agreements",icon:"fa-handshake",title:"Player Agreement Form"},
+            {to:"/admin/records/matchdetails",icon:"fa-futbol",title:"Match Venue & Team Colours"},
         ],
 
         reports: [
-            {to:"/admin/reports/clubs",icon:"print",title:"Club Report"},
-            {to:"",icon:"print",title:"Match Report"},
-            {to:"",icon:"print",title:"Player Report"},
-            {to:"",icon:"print",title:"League Report"},
-            {to:"/admin/reports/birthdays",icon:"print",title:"Birthday Report"},
-            {to:"",icon:"print",title:"Performance Report"},
+            {to:"/admin/reports/clubs",icon:"fa-print-search",title:"Club Report"},
+            {to:"",icon:"fa-print-search",title:"Match Report"},
+            {to:"",icon:"fa-print-search",title:"Player Report"},
+            {to:"",icon:"fa-print-search",title:"League Report"},
+            {to:"/admin/reports/birthdays",icon:"fa-print-search",title:"Birthday Report"},
+            {to:"",icon:"fa-print-search",title:"Performance Report"},
         ],
 
 
         maintenance: [
-            {to:"",icon:"people",title:"Venue Setup"},
-            {to:"",icon:"people",title:"League Management"},
+            {to:"/admin/maintenance/venues",icon:"fa-futbol",title:"Venue Setup"},
+            {to:"/admin/maintenance/leagues",icon:"fa-sitemap",title:"League Management"},
         ],
 
         security: [
-            {to:"/admin/security/users",icon:"people",title:"Users"},
-            {to:"/admin/security/roles",icon:"cog",title:"Roles"},
-            {to:"/admin/security/permissions",icon:"lock-locked",title:"Permissions"},
-            {to:"/admin/security/database",icon:"cloudy",title:"Database Admin"},
+            {to:"/admin/security/users",icon:"fa-users",title:"Users"},
+            {to:"/admin/security/roles",icon:"fa-user-tag",title:"Roles"},
+            {to:"/admin/security/permissions",icon:"fa-user-lock",title:"Permissions"},
+            {to:"/admin/security/database",icon:"fa-database",title:"Database Admin"},
         ],
     }
 

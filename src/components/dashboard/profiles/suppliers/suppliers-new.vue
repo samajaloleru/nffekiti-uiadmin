@@ -192,7 +192,7 @@
         
         <div class="fl w-100 tc pv3">
           <span v-if="isSave" class="ph3 pv2 br4 bg-green pointer f6 white tc no-underline"  @click="save" >
-           <i class="fas fa-save"></i> Submit
+           <i class="fal fa-save"></i> Submit
           </span>
         </div>
       </div>

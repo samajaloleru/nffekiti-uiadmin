@@ -2,11 +2,11 @@
     <section>
         <div class="w-100 pa2 bg-green fixed z-999 cf inline-flex-ns items-center-ns relative">
             <div class="fl w-100 pa1 tc tl-ns pb fw5 tracked ttu f7 white ">
-                System Security / Users / Edit
+                Maintenance / Venue Setup / Edit
             </div>
 
             <div class="white pa2 br1 tc tr-ns f7 fl w-100 db dib-ns absolute-ns left-0-ns w-80-l">
-                <router-link :to="{name:'users-view',params:{id:record.ID}}" class="ph2 br1 bg-near-white pointer f6 near-black tc no-underline">
+                <router-link :to="{name:'venues-view',params:{id:record.ID}}" class="ph2 br1 bg-near-white pointer f6 near-black tc no-underline">
                     <i class="fal fa-chevron-left"></i> Back
                 </router-link>
             </div>
@@ -20,8 +20,8 @@
 
             <div v-if="isFound" class="pa2 bg-washed-yellow br1 cf">
                 <div class="fl w-20-l w-25-m w-100 tc pa2">
-                    <input type="file" class="dn" @change="uploadImageDisplay('Image')" ref="userImage"/>
-                    <img :src="record.Image" @error="record.Image = userIcon" class="w4 br-100 bg-near-white pa1" @click="uploadImage('userImage')" />
+                    <input type="file" class="dn" @change="uploadImageDisplay('Image')" ref="venueImage"/>
+                    <img :src="record.Image" @error="record.Image = venueIcon" class="w4 br-100 bg-near-white pa1" @click="uploadImage('venueImage')" />
                 </div>
 
                 <div class="fl w-80-l w-75-m w-100 pa2">
@@ -85,8 +85,8 @@
 
                     <div class="fl w-100">
                         <div class="fl ph1 mt3 w-100 w-50-ns">
-                            <label class="db fw4 lh-copy f6 black" for="Username">Username </label>
-                            <input class="pa2 ba b--silver br2 bg-white w-100 " type="text" v-model="record.Username">
+                            <label class="db fw4 lh-copy f6 black" for="Venuename">Venuename </label>
+                            <input class="pa2 ba b--silver br2 bg-white w-100 " type="text" v-model="record.Venuename">
                         </div>
                         <div class="fl ph1 mt3 w-100 w-50-ns">
                             <label class="db fw4 lh-copy f6 black" for="Password">Password</label>
@@ -116,17 +116,17 @@
 	import {displayImage} from "@/common"
 	import {checkRedirect} from "@/common"
 	import notify from "@/components/notify"
-	import userIcon from "@/assets/user.png"
+	import venueIcon from "@/assets/user.png"
 
 	export default {
 		data() {return{
-			url: "/api/users", 
+			url: "/api/venues", 
 			record: {}, 
 			notifications:[], 
 			profileList:[],
 			isFound:false,
 			isSave:true,
-			userIcon
+			venueIcon
 		}},
 		components: { notify },
 		created () { 
@@ -169,7 +169,7 @@
 
 					if(response.data.Body !== null && response.data.Body !== undefined ){
 						setTimeout(function(){
-							app.$router.push({name:"users-view",params:{id:response.data.Body}})
+							app.$router.push({name:"venues-view",params:{id:response.data.Body}})
 						},1000)
 					} else {
 						app.isSave = true;

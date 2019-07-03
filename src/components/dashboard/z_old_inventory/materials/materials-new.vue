@@ -69,7 +69,7 @@
             
             <div class="fl w-100 mt3">
                 <div v-if="isSave" class="fr ph3 pv2 br1 bg-near-black near-white grow-ns pointer f6 tc no-underline"  @click="save" >
-                   <i class="fas fa-save"></i> Submit
+                   <i class="fal fa-save"></i> Submit
                 </div>
             </div>
         </div>

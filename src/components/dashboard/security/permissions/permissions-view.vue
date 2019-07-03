@@ -7,7 +7,7 @@
 
         <div class="white pa2 br1 tc tr-ns f7 fl w-100 db dib-ns absolute-ns left-0-ns w-80-l">
           <router-link :to="{'name':'permissions-search'}" class="ph2 br1 bg-near-white pointer f6 near-black tc no-underline">
-            <i class="fas fa-chevron-left"></i> Back
+            <i class="fal fa-chevron-left"></i> Back
           </router-link>
         </div>
       </div>
@@ -78,7 +78,7 @@
 
             <div class="fl w-100 mv3">
               <router-link :to="{name:'permissions-edit',params:{id:record.ID}}" class="fr ph3 pv2 br1 bg-near-black near-white grow-ns pointer f6 tc no-underline" >
-                <i class="fas fa-edit"></i> Edit
+                <i class="fal fa-edit"></i> Edit
               </router-link>
             </div>
           </div>

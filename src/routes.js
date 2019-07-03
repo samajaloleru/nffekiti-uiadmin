@@ -4,18 +4,18 @@ import Router from "vue-router"
 //splash-screen
 // import loadingComponent from "@/components/loading"
 
-//sign-up&in
+//signup & signin
 import signinComponent from "@/components/auth/signin"
 import forgotComponent from "@/components/auth/forgot"
 
-//dashboard
+//dashboard & menu
 import menuBasedComponent from "@/components/menuBased"
-
 import dashboardComponent from "@/components/dashboard/home"
+
 
 import recordsRoutes from "@/components/dashboard/records/routes.vue"
 import reportsRoutes from "@/components/dashboard/reports/routes.vue"
-
+import maintenanceRoutes from "@/components/dashboard/maintenance/routes.vue"
 import securityRoutes from "@/components/dashboard/security/routes.vue"
 
 
@@ -47,6 +47,11 @@ const router =  new Router({
                     path: 'reports',
                     component: reportsRoutes,
                     children: reportsRoutes.children
+                }, 
+                {
+                    path: 'maintenance',
+                    component: maintenanceRoutes,
+                    children: maintenanceRoutes.children
                 }, 
                 {
                     path: 'security',

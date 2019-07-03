@@ -13,7 +13,7 @@
             <input type="number" class="w2 green bn tc br2 bg-white" @click="searchRecords" min="1" v-model.number="search.page"> 
         </span>
         <router-link :to="{'name':'roles-new'}" class="ph2  br1 bg-near-black near-white pointer f6 tc no-underline">
-            <i class="fas fa-plus"></i> New
+            <i class="fal fa-plus"></i> New
         </router-link>
       </div>
     </div>

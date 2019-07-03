@@ -602,7 +602,7 @@
                     </div>
                     <div class=" w-100 mv3">
                         <router-link :to="{name:'players-edit',params:{id:record.ID}}" class="ph3 pv2 br4 bg-green grow-ns pointer f6 white fr tc no-underline">
-                            <i class="fas fa-edit"></i> Edit
+                            <i class="fal fa-edit"></i> Edit
                         </router-link>
                     </div>
                 </div>

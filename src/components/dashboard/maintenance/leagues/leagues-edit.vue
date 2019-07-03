@@ -2,11 +2,11 @@
     <section>
         <div class="w-100 pa2 bg-green fixed z-999 cf inline-flex-ns items-center-ns relative">
             <div class="fl w-100 pa1 tc tl-ns pb fw5 tracked ttu f7 white ">
-                System Security / Users / Edit
+                Maintenance / League Management / Edit
             </div>
 
             <div class="white pa2 br1 tc tr-ns f7 fl w-100 db dib-ns absolute-ns left-0-ns w-80-l">
-                <router-link :to="{name:'users-view',params:{id:record.ID}}" class="ph2 br1 bg-near-white pointer f6 near-black tc no-underline">
+                <router-link :to="{name:'leagues-view',params:{id:record.ID}}" class="ph2 br1 bg-near-white pointer f6 near-black tc no-underline">
                     <i class="fal fa-chevron-left"></i> Back
                 </router-link>
             </div>
@@ -20,8 +20,8 @@
 
             <div v-if="isFound" class="pa2 bg-washed-yellow br1 cf">
                 <div class="fl w-20-l w-25-m w-100 tc pa2">
-                    <input type="file" class="dn" @change="uploadImageDisplay('Image')" ref="userImage"/>
-                    <img :src="record.Image" @error="record.Image = userIcon" class="w4 br-100 bg-near-white pa1" @click="uploadImage('userImage')" />
+                    <input type="file" class="dn" @change="uploadImageDisplay('Image')" ref="leagueImage"/>
+                    <img :src="record.Image" @error="record.Image = leagueIcon" class="w4 br-100 bg-near-white pa1" @click="uploadImage('leagueImage')" />
                 </div>
 
                 <div class="fl w-80-l w-75-m w-100 pa2">
@@ -35,30 +35,6 @@
                         </select>
                     </div>
 
-                    <div class="fl w-100 ph1">
-                        <div class="fl mt3 tr w-third w-20-l">
-                            <label class="fw4 lh-copy f6 black">Is Fan: </label>
-                            <input class="pa2 ba b--silver br2 bg-white " type="checkbox" v-model="record.IsFan">
-                        </div>
-
-                        <div class="fl mt3 tr w-third w-20-l">
-                            <label class="fw4 lh-copy f6 black">Is Club: </label>
-                            <input class="pa2 ba b--silver br2 bg-white " type="checkbox" v-model="record.IsClub">
-                        </div>
-                        <div class="fl mt3 tr w-third w-20-l">
-                            <label class="fw4 lh-copy f6 black">Is Player: </label>
-                            <input class="pa2 ba b--silver br2 bg-white " type="checkbox" v-model="record.IsPlayer">
-                        </div>
-                        <div class="fl mt3 tr w-third w-20-l">
-                            <label class="fw4 lh-copy f6 black">Is Official: </label>
-                            <input class="pa2 ba b--silver br2 bg-white " type="checkbox" v-model="record.IsOfficial">
-                        </div>
-                        
-                        <div class="fl mt3 tr w-two-thirds w-20-l">
-                            <label class="fw4 lh-copy f6 black">Is Club Official: </label>
-                            <input class="pa2 ba b--silver br2 bg-white " type="checkbox" v-model="record.IsClubOfficial">
-                        </div>
-                    </div>
 
                     <div class="fl w-100">
                         <div class="fl ph1 mt3 w-100 w-50-l">
@@ -85,8 +61,8 @@
 
                     <div class="fl w-100">
                         <div class="fl ph1 mt3 w-100 w-50-ns">
-                            <label class="db fw4 lh-copy f6 black" for="Username">Username </label>
-                            <input class="pa2 ba b--silver br2 bg-white w-100 " type="text" v-model="record.Username">
+                            <label class="db fw4 lh-copy f6 black" for="leagues">leagues </label>
+                            <input class="pa2 ba b--silver br2 bg-white w-100 " type="text" v-model="record.leagues">
                         </div>
                         <div class="fl ph1 mt3 w-100 w-50-ns">
                             <label class="db fw4 lh-copy f6 black" for="Password">Password</label>
@@ -116,17 +92,17 @@
 	import {displayImage} from "@/common"
 	import {checkRedirect} from "@/common"
 	import notify from "@/components/notify"
-	import userIcon from "@/assets/user.png"
+	import leagueIcon from "@/assets/user.png"
 
 	export default {
 		data() {return{
-			url: "/api/users", 
+			url: "/api/leagues", 
 			record: {}, 
 			notifications:[], 
 			profileList:[],
 			isFound:false,
 			isSave:true,
-			userIcon
+			leagueIcon
 		}},
 		components: { notify },
 		created () { 
@@ -169,7 +145,7 @@
 
 					if(response.data.Body !== null && response.data.Body !== undefined ){
 						setTimeout(function(){
-							app.$router.push({name:"users-view",params:{id:response.data.Body}})
+							app.$router.push({name:"leagues-view",params:{id:response.data.Body}})
 						},1000)
 					} else {
 						app.isSave = true;

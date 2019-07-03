@@ -1,7 +1,7 @@
 <template>
     <section>
       <div class="w-100 pa2 bg-green fixed z-999 cf inline-flex-ns items-center-ns relative">
-        <div class="fl w-100 pa1 tc tl-ns pb fw5 tracked ttu f7 white ">
+        <div class="fl w-100 pa1 tc tl-ns pb fw5 tracked ttu f7-ns f8 white ">
           Records / Match Venue & Team Colours / Search
         </div>
 
@@ -13,7 +13,7 @@
             <input type="number" class="w2 green bn tc br2 bg-white" @click="searchRecords" min="1" v-model.number="search.page"> 
           </span>
           <router-link :to="{'name':'matchdetails-new'}" class="ph2  br1 bg-near-black near-white pointer f6 tc no-underline">
-            <i class="fas fa-plus"></i> New
+            <i class="fal fa-plus"></i> New
           </router-link>
         </div>
       </div>
@@ -24,7 +24,7 @@
           <table-display>
             <template slot="tableHead">
               <tr class="tl bg-near-lack black f7">
-                <td class="ph2 tc bg-near-black">
+                <td class="w1 ph2 tc bg-near-black">
                   <i @click="searchRecords" class="fas near-white fa-search"></i>
                 </td>
                 <td class="">
@@ -54,7 +54,7 @@
             </template>
             <template slot="tableBody" v-if="recordList.length > 0">
               <tr class="stripe-dark" v-for="(matchdetail, index) in recordList" :key="index">
-                <td classrole="tc">
+                <td class="tc">
                   <router-link class="mid-gray hover-green" :to="{name:'matchdetails-view',params:{id:matchdetail.ID}}">
                     <i class="fas fa-circle"></i>
                   </router-link>

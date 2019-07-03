@@ -5,8 +5,8 @@
     <div class="w-100 relative white">
         <nav @click="toggleMenu" class="w-100 center cf f6 f5-ns inline-flex items-center fw5 h3 bg-white fixed  z-max">
             <span class="fl w-80 dark-green">
-                <span  class="ml2 dib dn-l fas fa-bars"></span>
-                <span class=" pl2 f5 f6-ns"> Ekiti State Football Association </span>
+                <span class="dn-l dib"><i class="ml2 fal fa-bars"></i></span>
+                <span class="pl2-l pl1 b f5 f6-m"> Ekiti State Football Association </span>
             </span>
             <span class="fl w-20 pa2">
                 <router-link :to="{name: 'dashboard'}">
@@ -22,8 +22,8 @@
             <template slot="default">
                 <li class="pointer z-max"  @click="toggleMenu">    
                     <div class="ph2 w-100 center cf f6 f5-ns inline-flex items-center fw5 h3 bg-white fixed dn-l red">
-                        <i class="fas fa-times-circle"></i>
-                        <span class=" pl2 f5 f6-ns">
+                        <i class="fal fa-times-circle"></i>
+                        <span class="b pl2 f5 f6-m">
                             Ekiti State Football Association
                         </span>
                     </div>

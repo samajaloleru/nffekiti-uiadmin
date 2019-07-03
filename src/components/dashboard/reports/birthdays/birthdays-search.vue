@@ -12,7 +12,7 @@
                     Records
                 </span>
                 <span @click="printRecords('tableReport')" class="ph2  br1 bg-near-white near-black pointer f6 tc no-underline">
-                    <i class="fas fa-print"></i> Print
+                    <i class="fal fa-print"></i> Print
                 </span>
             </div>
         </div>
@@ -26,7 +26,7 @@
                     <template slot="tableHead">
                         <tr class="tl bg-near-lack black f7">
                             <td class=" tc bg-near-white">
-                            <i @click="searchRecords" class="fas near-black fa-search"></i>
+                            <i @click="searchRecords" class="fal near-black fa-search"></i>
                             </td>
                             <td class="">
                             <input type="text" v-model="search.filter.dob" placeholder="Filter" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">

@@ -13,7 +13,7 @@
                     <input type="number" class="w2 green bn tc br2 bg-white" @click="searchRecords" min="1" v-model.number="search.page"> 
                 </span>
                 <router-link :to="{'name':'permissions-new'}" class="ph2  br1 bg-near-black near-white pointer f6 tc no-underline">
-                    <i class="fas fa-plus"></i> New
+                    <i class="fal fa-plus"></i> New
                 </router-link>
             </div>
         </div>
@@ -24,26 +24,23 @@
                 <table-display>
                     <template slot="tableHead">
                         <tr class="tl bg-near-lack black f7">
-                            <td class=" tc bg-near-black">
-                            <i @click="searchRecords" class="fas near-white fa-search"></i>
+                            <td class="w1 ph2 tc bg-near-black">
+                                <i @click="searchRecords" class="fas near-white fa-search"></i>
                             </td>
                             <td class="">
-                            <input type="text" v-model="search.filter.title" placeholder="Title" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
+                                <input type="text" v-model="search.filter.title" placeholder="Title" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
                             </td>
                             <td class="">
-                            <input type="text" v-model="search.filter.status" placeholder="Status" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
+                                <input type="text" v-model="search.filter.status" placeholder="Status" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
                             </td>
                             <td class="">
-                            <input type="text" v-model="search.filter.code" placeholder="Url Code" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
+                                <input type="text" v-model="search.filter.code" placeholder="Url Code" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
                             </td>
                             <td class="">
-                            <input type="text" v-model="search.filter.method" placeholder="Method" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
+                                <input type="text" v-model="search.filter.method" placeholder="Method" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
                             </td>
                             <td class="">
-                            <input type="text" v-model="search.filter.workflow" placeholder="Action" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
-                            </td>
-                            <td class="">
-                            <input type="text" v-model="search.filter.workflow" placeholder="Description" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
+                                <input type="text" v-model="search.filter.workflow" placeholder="Action" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
                             </td>
                         </tr>
                         <tr class="tl bg-gray white">
@@ -53,24 +50,22 @@
                             <td class="pa2">Url Code</td>
                             <td class="pa2">Method</td>
                             <td class="pa2">Action</td>
-                            <td class="pa2">Description</td>
                         </tr>
                     </template>
                     <template slot="tableBody" v-if="recordList.length > 0">
                         <tr class="stripe-dark" v-for="(permission, index) in recordList" :key="index">
-                            <td classrole="tc">
-                            <router-link class="mid-gray hover-green" :to="{name:'permissions-view',params:{id:permission.ID}}">
-                                <i class="fas fa-circle"></i>
-                            </router-link>
+                            <td class="tc">
+                                <router-link class="mid-gray hover-green" :to="{name:'permissions-view',params:{id:permission.ID}}">
+                                    <i class="fas fa-circle"></i>
+                                </router-link>
                             </td>
                             <td class=" pa2"> 
-                            <span class="f7">#{{(index+1)+(search.skip*search.limit)}}.</span> {{permission.Title}}
+                                <span class="f7">#{{(index+1)+(search.skip*search.limit)}}.</span> {{permission.Title}}
                             </td>
                             <td class=" pa2">{{permission.Workflow}}</td>
                             <td class=" pa2">{{permission.Code}}</td>
                             <td class=" pa2">{{permission.Method}}</td>  
                             <td class=" pa2">{{permission.Action}}</td>  
-                            <td class=" pa2">{{permission.Description}}</td>  
                         </tr>
                     </template>
                 </table-display>

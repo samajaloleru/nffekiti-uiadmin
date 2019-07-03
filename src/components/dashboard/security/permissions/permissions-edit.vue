@@ -7,7 +7,7 @@
 
         <div class="white pa2 br1 tc tr-ns f7 fl w-100 db dib-ns absolute-ns left-0-ns w-80-l">
           <router-link :to="{name:'permissions-view',params:{id:record.ID}}" class="ph2 br1 bg-near-white pointer f6 near-black tc no-underline">
-            <i class="fas fa-chevron-left"></i> Back
+            <i class="fal fa-chevron-left"></i> Back
           </router-link>
         </div>
       </div>
@@ -111,7 +111,7 @@
 
             <div class="fl w-100 mv3">
               <div class="fr ph3 pv2 br1 bg-near-black near-white grow-ns pointer f6 tc no-underline"  @click="save" >
-                <i class="fas fa-check"></i> Save
+                <i class="fal fa-check"></i> Save
               </div>
             </div>
           </div>
