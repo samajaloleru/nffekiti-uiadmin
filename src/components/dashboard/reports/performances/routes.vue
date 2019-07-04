@@ -4,11 +4,11 @@
 
 <script type="text/javascript">
 
-  import performanceSearch from "@/components/dashboard/reports/performance/performance-search"
+  import performancesSearch from "@/components/dashboard/reports/performances/performances-search"
 
   export default {
     children: [
-      { path: '', component: performanceSearch, name:"performance-search"},
+      { path: '', component: performancesSearch, name:"performances-search"},
     ],
   }
 </script>

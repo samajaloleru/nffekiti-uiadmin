@@ -4,10 +4,10 @@
 
 <script type="text/javascript">
 
-  import clubsNew from "@/components/dashboard/records/clubs/clubs-new"
-  import clubsView from "@/components/dashboard/records/clubs/clubs-view"
-  import clubsEdit from "@/components/dashboard/records/clubs/clubs-edit"
-  import clubsSearch from "@/components/dashboard/records/clubs/clubs-search"
+  import clubsNew from "@/components/dashboard/maintenance/clubs/clubs-new"
+  import clubsView from "@/components/dashboard/maintenance/clubs/clubs-view"
+  import clubsEdit from "@/components/dashboard/maintenance/clubs/clubs-edit"
+  import clubsSearch from "@/components/dashboard/maintenance/clubs/clubs-search"
 
   export default {
     children: [

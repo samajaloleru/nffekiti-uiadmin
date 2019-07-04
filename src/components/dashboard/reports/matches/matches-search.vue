@@ -2,7 +2,7 @@
     <section>
         <div class="w-100 pa2 bg-green fixed z-999 cf inline-flex-ns items-center-ns relative">
             <div class="fl w-100 pa1 tc tl-ns pb fw5 tracked ttu f7 white ">
-                Reports / Match / Search
+                Reports / Matches / Search
             </div>
 
             <div class="white pa2 br1 tc tr-ns f7 fl w-100 db dib-ns absolute-ns left-0-ns w-80-l">
@@ -11,8 +11,8 @@
                     <input type="number" class="w3 b white bn tc br2 bg-transparent" v-model.number="search.limit" @change="searchRecords"> 
                     Records
                 </span>
-                <span @click="printRecords('tableReport')" class="ph2  br1 bg-near-white near-black pointer f6 tc no-underline">
-                    <i class="fas fa-print"></i> Print
+                <span @click="printRecords('tableReport')" class="ph2 br1 bg-yellow near-black pointer f6 tc no-underline">
+                    <i class="fas fa-print"></i> PRINT
                 </span>
             </div>
         </div>
@@ -24,8 +24,8 @@
 
                 <table-display>
                     <template slot="tableHead">
-                        <tr class="tl bg-near-lack black f7">
-                            <td class=" tc bg-near-white">
+                        <tr class="tl black f7">
+                            <td class="w1 ph2 tc bg-near-white">
                             <i @click="searchRecords" class="fas near-black fa-search"></i>
                             </td>
                             <td class="">
@@ -68,7 +68,7 @@
                 </table-display>
                 
                 <div v-if="recordList.length < 1">
-                    <h1 class="black f6 tc ma2">There are currently no match report within the system for the period specified</h1>
+                    <h1 class="black f6 tc ma2">There are currently no records </h1>
                 </div>
             
         </div>

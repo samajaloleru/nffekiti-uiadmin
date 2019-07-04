@@ -52,7 +52,7 @@
             </template>
         </table-display>
         <div v-if="recordList.length < 1">
-            <h1 class="black f6 tc ">There are currently no document for this customer record</h1>
+            <h1 class="black f6 tc ">There are currently no records </h1>
         </div>
     </section>
 </template>

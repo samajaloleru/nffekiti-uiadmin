@@ -32,8 +32,8 @@
                 </li>
 
                 <menulistgroup title="Records" :submenu="submenu.records"/>        
-                <menulistgroup title="Reports" :submenu="submenu.reports"/>
                 <menulistgroup title="Maintenance" :submenu="submenu.maintenance"/>
+                <menulistgroup title="Generate Reports" :submenu="submenu.reports"/>
                 <menulistgroup title="System Security" :submenu="submenu.security"/>
 
                 <li class="ph2 bg-mid-gray dim" >
@@ -54,10 +54,9 @@
     const submenu = {
         records: [
             {to:"/admin/records/teams",icon:"fa-clipboard-list",title:"Team List"},
-            {to:"/admin/records/clubs",icon:"fa-folders",title:"Club Form"},
             {to:"/admin/records/players",icon:"fa-id-card",title:"Players License"},
-            {to:"/admin/records/agreements",icon:"fa-handshake",title:"Player Agreement Form"},
-            {to:"/admin/records/matchdetails",icon:"fa-futbol",title:"Match Venue & Team Colours"},
+            {to:"/admin/records/agreements",icon:"fa-handshake",title:"Player Agreement"},
+            {to:"/admin/records/profiles",icon:"fa-users",title:"Profile Manager"},
         ],
 
         reports: [
@@ -70,8 +69,10 @@
         ],
 
         maintenance: [
-            {to:"/admin/maintenance/venues",icon:"fa-futbol",title:"Venue Setup"},
+            {to:"/admin/maintenance/venues",icon:"fa-map-marked-alt",title:"Venue Setup"},
+            {to:"/admin/maintenance/clubs",icon:"fa-folders",title:"Club Registration"},
             {to:"/admin/maintenance/leagues",icon:"fa-sitemap",title:"League Management"},
+            {to:"/admin/maintenance/matchdetails",icon:"fa-futbol",title:"Match Venue & Team Colours"},
         ],
 
         security: [

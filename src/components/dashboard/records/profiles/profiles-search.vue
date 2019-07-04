@@ -1,8 +1,9 @@
 <template>
     <section>
+
         <div class="w-100 pa2 bg-green fixed z-999 cf inline-flex-ns items-center-ns relative">
             <div class="fl w-100 pa1 tc tl-ns pb fw5 tracked ttu f7 white ">
-                Records / Team List / Search
+                Records / Profile Manager / Search
             </div>
 
             <div class="white pa2 br1 tc tr-ns f7 fl w-100 db dib-ns absolute-ns left-0-ns w-80-l">
@@ -12,13 +13,13 @@
                     of page
                     <input type="number" class="b w2 white bn tc br2 bg-green" @click="searchRecords" min="1" v-model.number="search.page"> 
                 </span>
-                <router-link :to="{'name':'teams-new'}" class="ph2 br1 bg-yellow near-black b pointer f6 tc no-underline">
+                <router-link :to="{'name':'profiles-new'}" class="ph2 br1 bg-yellow near-black b pointer f6 tc no-underline">
                     <i class="fal fa-plus"></i> NEW
                 </router-link>
             </div>
         </div>
 
-
+        
         <div class="cf h2 w-100 db dn-ns"></div>
         <div class="pv2 mt4 dib w-100">
             <div class="overflow-auto">
@@ -32,51 +33,48 @@
                                 <input type="text" v-model="search.filter.fullname" placeholder="Filter" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
                             </td>
                             <td class="">
-                                <input type="text" v-model="search.filter.dob" placeholder="Filter" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
+                                <input type="text" v-model="search.filter.mobile" placeholder="Filter" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
                             </td>
                             <td class="">
-                                <input type="text" v-model="search.filter.license" placeholder="Filter" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
+                                <input type="text" v-model="search.filter.email" placeholder="Filter" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
                             </td>
                             <td class="">
-                                <input type="text" v-model="search.filter.playerno" placeholder="Filter" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
+                                <input type="text" v-model="search.filter.rank" placeholder="Filter" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
                             </td>
                             <td class="">
                                 <input type="text" v-model="search.filter.workflow" placeholder="Filter" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
                             </td>
                             <td class="">
-                                <input type="text" v-model="search.filter.league" placeholder="Filter" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
-                            </td>
-                            <td class="">
-                                <input type="text" v-model="search.filter.club" placeholder="Filter" class="ba b--black-10 f7 fl tracked bg-white black pa1 w-100 br1">
+                                <span class="tl">
+                                    Player: <input class="pa2 ba b--silver br2 bg-white " type="checkbox" v-model="search.filter.IsPlayer"> 
+                                </span>
+                                <span class="fr">
+                                    Club Official: <input class="pa2 ba b--silver br2 bg-white " type="checkbox" v-model="search.filter.IsClubOfficial">
+                                </span>
                             </td>
                         </tr>
-                        <tr class="tl bg-near-white near-black">
+                        <tr class="tl bg-black white">
                             <td class=""></td>
-                            <td class="pa2">Fullname</td>
-                            <td class="pa2">Date of Birth</td>
-                            <td class="pa2">License No</td>
-                            <td class="pa2">Players ID</td>
-                            <td class="pa2">Status</td>
-                            <td class="pa2">Club</td>
-                            <td class="pa2">League</td>
+                            <td class="pa2 ">Fullname</td>
+                            <td class="pa2 ">Mobile</td>
+                            <td class="pa2 ">Email</td>
+                            <td class="pa2 ">Rank</td>
+                            <td class="pa2 ">Status</td>
+                            <td class="pa2 ">Player /or/ Club Official</td>
                         </tr>
                     </template>
                     <template slot="tableBody" v-if="recordList.length > 0">
-                        <tr class="stripe-dark" v-for="(team, index) in recordList" :key="index">
-                            <td class="tc">
-                            <router-link class="mid-gray hover-green" :to="{name:'teams-view',params:{id:team.ID}}">
-                                <i class="fas fa-circle"></i>
-                            </router-link>
+                        <tr class="stripe-dark" v-for="(profile, index) in recordList" :key="index">
+                            <td class="">
+                                <router-link data-glyph="eye" class="f7 oi br-pill bg-green hover-bg-dark-green ph1 pt1 near-white" :to="{name:'profiles-view',params:{id:profile.ID}}" ></router-link>
                             </td>
-                            <td class=" pa2"> 
-                            <span class="f7">#{{(index+1)+(search.skip*search.limit)}}.</span> {{team.Player}}
+                            <td class=" pa2">
+                                <span class="f7">#{{(index+1)+(search.skip*search.limit)}}.</span> {{profile.Fullname}}
                             </td>
-                            <td class=" pa2">{{team.Dob}}</td>
-                            <td class=" pa2">{{team.LicenseNo}}</td>
-                            <td class=" pa2">{{team.PlayerNo}}</td>  
-                            <td class=" pa2">{{team.Workflow}}</td>  
-                            <td class=" pa2">{{team.Club}}</td>  
-                            <td class=" pa2">{{team.League}}</td>  
+                            <td class=" pa2 f7">{{profile.Mobile}}</td>
+                            <td class=" pa2 f7">{{profile.Email}}</td>
+                            <td class=" pa2 f7">{{profile.Occupation}}</td>
+                            <td class=" pa2 f7">{{profile.Workflow}}</td>
                         </tr>
                     </template>
                 </table-display>
@@ -95,8 +93,10 @@
 
   export default {
     data() {return{
-      url: "/api/customers", recordList: [],
-      search: {text: "", field: "Fullname", limit: 50, page:1, skip: 0, filter:{}},
+      url: "/api/staffs", recordList: [],
+      search: {text: "", field: "Fullname", limit: 50, page:1, skip: 0, 
+          filter:{fullname:"",phone:"",station:"",state:"",workstatus:"",IsPlayer:true, IsClubOfficial:false}
+        },
     }},
     components: { tableDisplay },
     created() {this.searchRecords()},

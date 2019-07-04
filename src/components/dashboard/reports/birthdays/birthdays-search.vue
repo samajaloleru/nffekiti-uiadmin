@@ -11,8 +11,8 @@
                     <input type="number" class="w3 b white bn tc br2 bg-transparent" v-model.number="search.limit" @change="searchRecords"> 
                     Records
                 </span>
-                <span @click="printRecords('tableReport')" class="ph2  br1 bg-near-white near-black pointer f6 tc no-underline">
-                    <i class="fal fa-print"></i> Print
+                <span @click="printRecords('tableReport')" class="ph2 br1 bg-yellow near-black pointer f6 tc no-underline">
+                    <i class="fas fa-print"></i> PRINT
                 </span>
             </div>
         </div>
@@ -24,8 +24,8 @@
 
                 <table-display>
                     <template slot="tableHead">
-                        <tr class="tl bg-near-lack black f7">
-                            <td class=" tc bg-near-white">
+                        <tr class="tl black f7">
+                            <td class="w1 ph2 tc bg-near-white">
                             <i @click="searchRecords" class="fal near-black fa-search"></i>
                             </td>
                             <td class="">
@@ -68,7 +68,7 @@
                 </table-display>
                 
                 <div v-if="recordList.length < 1">
-                    <h1 class="black f6 tc ma2">There are currently no birthdays within the system for the period specified</h1>
+                    <h1 class="black f6 tc ma2">There are currently no records </h1>
                 </div>
             
         </div>

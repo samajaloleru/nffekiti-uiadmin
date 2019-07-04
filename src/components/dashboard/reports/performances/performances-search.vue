@@ -2,7 +2,7 @@
     <section>
         <div class="w-100 pa2 bg-green fixed z-999 cf inline-flex-ns items-center-ns relative">
             <div class="fl w-100 pa1 tc tl-ns pb fw5 tracked ttu f7 white ">
-                Reports / League / Search
+                Reports / Performances / Search
             </div>
 
             <div class="white pa2 br1 tc tr-ns f7 fl w-100 db dib-ns absolute-ns left-0-ns w-80-l">
@@ -11,8 +11,8 @@
                     <input type="number" class="w3 b white bn tc br2 bg-transparent" v-model.number="search.limit" @change="searchRecords"> 
                     Records
                 </span>
-                <span @click="printRecords('tableReport')" class="ph2  br1 bg-near-white near-black pointer f6 tc no-underline">
-                    <i class="fas fa-print"></i> Print
+                <span @click="printRecords('tableReport')" class="ph2 br1 bg-yellow near-black pointer f6 tc no-underline">
+                    <i class="fas fa-print"></i> PRINT
                 </span>
             </div>
         </div>
@@ -20,12 +20,12 @@
         <div class="cf h2 w-100 db dn-ns"></div>
         <div class="pv2 mt4 dib w-100" id="tableReport">
 
-            <div class="cf w-100 near-black tracked tc b f3" colspan="5">LEAGUE REPORT</div>
+            <div class="cf w-100 near-black tracked tc b f3" colspan="5">PERFORMANCE REPORT</div>
 
                 <table-display>
                     <template slot="tableHead">
-                        <tr class="tl bg-near-lack black f7">
-                            <td class=" tc bg-near-white">
+                        <tr class="tl black f7">
+                            <td class="w1 ph2 tc bg-near-white">
                             <i @click="searchRecords" class="fas near-black fa-search"></i>
                             </td>
                             <td class="">
@@ -52,7 +52,7 @@
                     <template slot="tableBody" v-if="recordList.length > 0">
                         <tr class="stripe-dark" v-for="(birthday, index) in recordList" :key="index">
                             <td class=" pa2 tr pr2">
-                            <router-link data-glyph="eye" class="oi br-pill bg-green hover-bg-dark-green ph1 pt1 near-white" :to="{name:'league-view',params:{id:birthday.ID}}" >
+                            <router-link data-glyph="eye" class="oi br-pill bg-green hover-bg-dark-green ph1 pt1 near-white" :to="{name:'birthdays-view',params:{id:birthday.ID}}" >
                             </router-link>
                             </td>
                             <td class=" pa2">
@@ -68,7 +68,7 @@
                 </table-display>
                 
                 <div v-if="recordList.length < 1">
-                    <h1 class="black f6 tc ma2">There are currently no league report within the system for the period specified</h1>
+                    <h1 class="black f6 tc ma2">There are currently no records </h1>
                 </div>
             
         </div>

@@ -89,7 +89,7 @@
 			</table-display>
 
 			<div v-if="recordList.length < 1">
-				<p class="black f6 tc ma5">There are currently no items</p>
+				<h1 class="black f6 tc ma5">There are currently no items</h1>
 			</div>
 			
 		</section>

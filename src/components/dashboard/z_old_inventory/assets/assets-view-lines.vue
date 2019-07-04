@@ -47,7 +47,7 @@
 	  
   
 	  <div class="fl w-100" v-if="recordList.length < 1">
-		<h1 class="black f6 tc ">There are currently no asset lines record </h1>
+		<h1 class="black f6 tc ">There are currently no records </h1>
 	  </div>
 
 	</section>
